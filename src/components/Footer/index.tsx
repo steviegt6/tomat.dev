@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { DetailedHTMLProps, forwardRef, HTMLAttributes } from "react";
+import { AiFillHeart } from "react-icons/ai";
 import styles from "./footer.module.css";
 
 export interface FooterProps
@@ -11,14 +12,11 @@ export const Footer = forwardRef<HTMLElement, FooterProps>(
     return (
       <footer {...props}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://github.com/steviegt6/tomat.dev"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
+          made with&nbsp;<span className={styles.heart}>&lt;3</span>
         </a>
       </footer>
     );
