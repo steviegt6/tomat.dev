@@ -1,5 +1,4 @@
 import { Card } from "components/Card";
-import { Footer } from "components/Footer";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
@@ -45,8 +44,6 @@ export default function Home() {
           <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
         </Card>
       </div>
-
-      <Footer />
     </>
   );
 }

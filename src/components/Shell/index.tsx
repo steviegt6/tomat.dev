@@ -1,3 +1,4 @@
+import { Footer } from "components/Footer";
 import Head from "next/head";
 import styles from "./shell.module.css";
 
@@ -12,6 +13,7 @@ export default function Shell({ children }: ShellProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>{children}</main>
+      <Footer />
     </div>
   );
 }

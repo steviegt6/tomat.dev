@@ -14,6 +14,11 @@
   flex-grow: 1;
 }
 
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+
 @media (prefers-color-scheme: dark) {
   .footer {
     border-color: #222;
