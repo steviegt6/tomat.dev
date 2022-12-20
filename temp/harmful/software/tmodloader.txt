@@ -1,4 +1,18 @@
 tModLoader
 ==========
 
-TODO
+tModLoader is a "mod loader" for Terraria (which has its own fair share of problems) and has been around since 2015, being the leading choice for Terraria modding since its release around Terraria 1.3 (and now Terraria 1.4).
+Despite its success, tModLoader is a product full of flaws, anti-patterns, and generally poor decision making.
+
+Where it all started.
+---------------------
+
+tModLoader saw its first release in July of 2015, and started as a humble hobby project by blushie. It quickly grew - especially due to a lack of competition - and was made maintainable by contributors through Chicken Bone's diff-patch implementation (`git diff` if you're familiar with that, the same general idea behind providing patches for individuals to apply when self-compiling tools or when modding software, see: anything by suckless, Minecraft modding, etc.).
+tModLoader was able to be made entirely open-source, this was unlike anything else seen before when it come to client modding (server mods like tShock already existed, but I digress). Eventually, alternatives such as PRISM (<https://github.com/TerrariaPrismTeam/Prism>) arose, but saw little attention or success.
+tModLoader was about convenience more than anything, and that's great until you realize that the convenience it provides is superficial at best, and sacrifices any semblance of simplicity or cleverness for a rudimentary, locked-in, inefficient API.
+
+Anit-patterns.
+--------------
+
+When blushie first started developing tModLoader, it was clear that an API as large as what we have now was not foreseen. The same core idea that was employed at the start is still in heavy use today - autoloading content through OOP patterns with individual hooks to define and control behavior. To an extent, this works. It's... okay.... sometimes. That is, until you need to reuse code, modularize anything, or introduce the concept of components. You need to rely quite heavily on abstraction to get anything done. This is an issue when you have these massive classes for defining something such as an item when you have tens of hooks to override for individual behaviors that often interact in undocumented ways.
+To further this issue, whether something is even supported by tModLoader is iffy at best.
