@@ -1,8 +1,11 @@
+"use client";
+
 import { Inter } from "@next/font/google";
 import { FaPalette } from "react-icons/fa";
 import Image from "next/image";
 import styles from "./Header.module.scss";
 import { cycleTheme } from "../../hooks/themeManager";
+import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +19,16 @@ export default function Header({
   theme: string;
   setTheme: (theme: string) => void;
 }) {
+  const [themes, setThemes] = useState<string[]>([]);
+
+  useEffect(() => {
+    fetch("/themes/themes.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setThemes(data);
+      });
+  });
+
   return (
     <div>
       <header>
@@ -37,7 +50,7 @@ export default function Header({
               <div
                 className={styles.themeToggle}
                 onClick={() => {
-                  cycleTheme(setTheme);
+                  cycleTheme(themes, setTheme);
                 }}
                 aria-label="Click to cycle themes."
               >

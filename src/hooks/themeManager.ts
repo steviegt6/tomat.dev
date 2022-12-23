@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Themes } from "../interfaces";
 
 export const THEME_KEY = "theme";
 export const LIGHT_THEME = "light";
@@ -66,18 +67,6 @@ export function loadTheme(theme: string) {
   document.head.appendChild(link);
 }
 
-export function cycleTheme(setTheme: (theme: string) => void) {
-  // TODO: json file with themes
-  const theme = getCurrentTheme();
-  switch (theme) {
-    case LIGHT_THEME:
-      setTheme(DARK_THEME);
-      break;
-    case DARK_THEME:
-      setTheme(SYNC_THEME);
-      break;
-    case SYNC_THEME:
-      setTheme(LIGHT_THEME);
-      break;
-  }
+export function cycleTheme(themes: Themes, setTheme: (theme: string) => void) {
+  setTheme(themes[(themes.indexOf(getCurrentTheme()) + 1) % themes.length]);
 }
