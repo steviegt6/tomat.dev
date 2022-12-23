@@ -1,17 +1,29 @@
-/*:root {
-  --background: #000000;
-  --foreground: #000000;
-}*/
+// Default styles (copied from dark theme)
+:root {
+  --background: #222222;
+  --foreground: #eeeeee;
+
+  --sub-color: #666666;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.pageContent {
   margin: 40px auto;
   max-width: 650px;
   line-height: 1.6;
   font-size: 18px;
   padding: 0 10px;
 
-  background: var(--background);
-  color: var(--foreground);
+  // padding-top: 26px;
 }
 
 h1,

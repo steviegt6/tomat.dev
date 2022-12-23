@@ -11,14 +11,20 @@ export const LINK_ELEMENT_ID = "currentTheme";
 const IS_BROWSER = typeof window !== "undefined";
 
 export function useSelectedTheme() {
-  const [theme, setTheme] = useState(getCurrentTheme);
+  const [theme, setTheme] = useState(DEFAULT_THEME);
 
-  useEffect(() => {
+  // TODO: This is really gross, FIXME
+  function realSetTheme(theme: string) {
+    setTheme(theme);
     loadTheme(theme);
     localStorage.setItem(THEME_KEY, theme);
-  }, [theme]);
+  }
 
-  return [theme, setTheme] as const;
+  useEffect(() => {
+    realSetTheme(getCurrentTheme());
+  }, []);
+
+  return [theme, realSetTheme] as const;
 }
 
 export function userPrefersDark() {
@@ -32,6 +38,8 @@ export function userPrefersDark() {
 
 export function getCurrentTheme() {
   const theme = IS_BROWSER && localStorage.getItem(THEME_KEY);
+
+  console.log(theme);
 
   if (theme) return theme;
   return DEFAULT_THEME;
@@ -56,4 +64,20 @@ export function loadTheme(theme: string) {
   link.href = `/./themes/${getTheme(theme)}.css`;
 
   document.head.appendChild(link);
+}
+
+export function cycleTheme(setTheme: (theme: string) => void) {
+  // TODO: json file with themes
+  const theme = getCurrentTheme();
+  switch (theme) {
+    case LIGHT_THEME:
+      setTheme(DARK_THEME);
+      break;
+    case DARK_THEME:
+      setTheme(SYNC_THEME);
+      break;
+    case SYNC_THEME:
+      setTheme(LIGHT_THEME);
+      break;
+  }
 }

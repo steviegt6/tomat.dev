@@ -1,0 +1,65 @@
+.header {
+  background: var(--foreground);
+  color: var(--background);
+
+  padding: 10px 0px;
+
+  // position: fixed;
+  // top: 0;
+  width: 100%;
+  // z-index: -1;
+}
+
+.headerContent {
+  margin: 0px auto;
+  max-width: 650px;
+  line-height: 1.6;
+  font-size: 18px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftHeaderContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rightHeaderContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profilePicture {
+  border-radius: 50%;
+}
+
+.canonicalName {
+  margin-left: 12px;
+}
+
+.themeToggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer;
+  color: var(--sub-color);
+
+  transition: color 0.2s;
+}
+
+.themeToggle:hover {
+  color: var(--background);
+}
+
+.themeText {
+  margin-left: 8px;
+}
