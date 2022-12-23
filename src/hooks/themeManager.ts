@@ -14,18 +14,17 @@ const IS_BROWSER = typeof window !== "undefined";
 export function useSelectedTheme() {
   const [theme, setTheme] = useState("");
 
-  // TODO: This is really gross, FIXME
-  function realSetTheme(theme: string) {
-    setTheme(theme);
+  useEffect(() => {
+    if (theme === "") return;
     loadTheme(theme);
     localStorage.setItem(THEME_KEY, theme);
-  }
+  }, [theme]);
 
   useEffect(() => {
-    realSetTheme(getCurrentTheme());
+    setTheme(getCurrentTheme());
   }, []);
 
-  return [theme, realSetTheme] as const;
+  return [theme, setTheme] as const;
 }
 
 export function userPrefersDark() {

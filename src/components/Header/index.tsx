@@ -22,11 +22,14 @@ export default function Header({
   const [themes, setThemes] = useState<string[]>([]);
 
   useEffect(() => {
+    // Errors OK here because this freaks out upon loading (lol). FIXME later?
     fetch("/themes/themes.json")
       .then((res) => res.json())
+      .catch((_err) => {})
       .then((data) => {
         setThemes(data);
-      });
+      })
+      .catch((_err) => {});
   });
 
   return (
