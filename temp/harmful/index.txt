@@ -1,0 +1,21 @@
+Things Considered Harmful
+=========================
+
+To quote <https://harmful.cat-v.org/>: "The world is full of things that most people think are OK or even good, when in reality are either evil or plain stupid."
+
+If you'd like to get meta ("'Considered Harmful' Essays Considered Harmful"): <http://meyerweb.com/eric/comment/chech.html>
+There are lots of things that irk me, and writing about them is something I've wanted to do for some time.
+I have done my fair share of ranting into the void or into chat rooms without every properly recording my thoughts, so here we are.
+These are, by design, "hit pieces" that make it hard for actual debates to occur. Contact me @ @tomat:matrix.org, Tomat#0001, or xxlennygamerxx@gmail.com if you'd like to offer information or insight, or make an inquiry about anything.
+
+Directory
+---------
+
+> software/
+  > tmodloader
+
+See Also
+--------
+
+<https://harmful.cat-v.org/>
+<http://meyerweb.com/eric/comment/chech.html>
