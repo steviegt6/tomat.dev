@@ -9,6 +9,9 @@
 * {
   margin: 0;
   padding: 0;
+
+  // Eases theme transitioning a bit.
+  transition: background 0.5s, color 0.5s;
 }
 
 body {
