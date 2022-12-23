@@ -11,7 +11,7 @@ export const LINK_ELEMENT_ID = "currentTheme";
 const IS_BROWSER = typeof window !== "undefined";
 
 export function useSelectedTheme() {
-  const [theme, setTheme] = useState(DEFAULT_THEME);
+  const [theme, setTheme] = useState("");
 
   // TODO: This is really gross, FIXME
   function realSetTheme(theme: string) {
