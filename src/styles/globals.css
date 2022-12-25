@@ -1,4 +1,8 @@
-// Default styles (copied from dark theme)
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Default styles (copied from dark theme) */
 :root {
   --background: #222222;
   --foreground: #eeeeee;
@@ -10,7 +14,7 @@
   margin: 0;
   padding: 0;
 
-  // Eases theme transitioning a bit.
+  /* Eases theme transitioning a bit. */
   transition: background 0.5s, color 0.5s;
 }
 
@@ -26,7 +30,7 @@ body {
   font-size: 18px;
   padding: 0 10px;
 
-  // padding-top: 26px;
+  /* padding-top: 26px; */
 }
 
 h1,

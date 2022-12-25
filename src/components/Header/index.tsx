@@ -3,7 +3,7 @@
 import { Inter } from "@next/font/google";
 import { FaPalette } from "react-icons/fa";
 import Image from "next/image";
-import styles from "./Header.module.scss";
+import styles from "./Header.module.css";
 import { cycleTheme } from "../../hooks/themeManager";
 import { useEffect, useState } from "react";
 
@@ -36,7 +36,7 @@ export default function Header({
     <div>
       <header>
         <h1 className={`${inter.className} ${styles.header}`}>
-          <div className={styles.headerContent}>
+          <div className={`flex ${styles.headerContent}`}>
             <div className={styles.leftHeaderContent}>
               <Image
                 className={styles.profilePicture}
