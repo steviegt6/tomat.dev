@@ -6,12 +6,28 @@ import {
   getBlogSlugs,
   getRealSlug,
 } from "../../lib/blogPostManager";
+import Script from "next/script";
 
 export default function BlogPage({ blog }: { blog: BlogPost }) {
   return (
     <div>
       {/* components={...components} */}
       <MDXRemote {...blog.content} />
+      <Script src="https://giscus.app/client.js"
+        data-repo="steviegt6/tomat.dev"
+        data-repo-id="R_kgDOIVMDbA"
+        data-category="Blog Discussions"
+        data-category-id="DIC_kwDOIVMDbM4CTTiU"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="transparent_dark"
+        data-lang="en"
+        data-loading="lazy"
+        crossOrigin="anonymous"
+        async />
     </div>
   );
 }

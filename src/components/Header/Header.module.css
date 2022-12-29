@@ -36,14 +36,6 @@
   align-items: center;
 }
 
-.profilePicture {
-  border-radius: 50%;
-}
-
-.canonicalName {
-  margin-left: 12px;
-}
-
 .themeToggle {
   display: flex;
   flex-direction: row;
@@ -54,10 +46,6 @@
   color: var(--sub-color);
 
   transition: color 0.2s;
-}
-
-.themeToggle:hover {
-  color: var(--background);
 }
 
 .themeText {

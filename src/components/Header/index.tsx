@@ -39,25 +39,26 @@ export default function Header({
           <div className={`flex ${styles.headerContent}`}>
             <div className={styles.leftHeaderContent}>
               <Image
-                className={styles.profilePicture}
+                className="rounded-full"
                 src={PROFILE_PICTURE}
                 alt="My profile picture, an OC of mine."
                 height={50}
                 width={50}
               />
-              <div className={styles.canonicalName}>
+              <div className="ml-3">
                 <p>{CANONICAL_NAME}</p>
               </div>
             </div>
             <div className={styles.rightHeaderContent}>
               <div
-                className={styles.themeToggle}
+                className="flex flex-row justify-between items-center cursor-pointer text-[var(--sub-color)] hover:text-[var(--background)] transition-colors transition-duration-[1]"
                 onClick={() => {
                   cycleTheme(themes, setTheme);
                 }}
                 aria-label="Click to cycle themes."
               >
-                <FaPalette /> <div className={styles.themeText}>{theme}</div>
+                <FaPalette />
+                <div className={styles.themeText}>{theme}</div>
               </div>
             </div>
           </div>
