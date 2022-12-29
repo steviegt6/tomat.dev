@@ -13,7 +13,9 @@ export default function BlogPage({ blog }: { blog: BlogPost }) {
     <div>
       {/* components={...components} */}
       <MDXRemote {...blog.content} />
-      <Script src="https://giscus.app/client.js"
+      <div id="comments" className="giscus" />
+      <Script
+        src="https://giscus.app/client.js"
         data-repo="steviegt6/tomat.dev"
         data-repo-id="R_kgDOIVMDbA"
         data-category="Blog Discussions"
@@ -27,7 +29,8 @@ export default function BlogPage({ blog }: { blog: BlogPost }) {
         data-lang="en"
         data-loading="lazy"
         crossOrigin="anonymous"
-        async />
+        async
+      />
     </div>
   );
 }
