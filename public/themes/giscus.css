@@ -50,7 +50,7 @@ main {
   --color-canvas-inset: transparent;
   --color-canvas-subtle: transparent;
 
-  --color-border-default: var(--background);
+  --color-border-default: var(--foreground);
   --color-border-muted: var(--sub-color);
 
   --color-neutral-muted: rgb(110 118 129 / 5%);
