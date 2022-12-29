@@ -58,7 +58,7 @@ main {
 
   --color-accent-fg: #58a6ff;
   --color-accent-emphasis: #1f6feb;
-  --color-accent-muted: var(--foreground) /* TODO: add this back rgb(56 139 253 / 40%);*/
+  --color-accent-muted: var(--foreground); /* TODO: rgb(56 139 253 / 40%)*/
   --color-accent-subtle: rgb(56 139 253 / 15%);
 
   --color-success-fg: #3fb950;
