@@ -57,7 +57,7 @@ main {
   --color-neutral-subtle: rgb(110 118 129 / 10%);
 
   --color-accent-fg: #58a6ff;
-  --color-accent-emphasis: #1f6feb;
+  --color-accent-emphasis: var(--foreground); /* TODO: add this back #1f6feb;*/
   --color-accent-muted: rgb(56 139 253 / 40%);
   --color-accent-subtle: rgb(56 139 253 / 15%);
 
