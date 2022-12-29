@@ -7,7 +7,7 @@ import {
   getRealSlug,
 } from "../../lib/blogPostManager";
 import Script from "next/script";
-import Giscus from "../../../giscus/components/Giscus";
+// import Giscus from "../../../giscus/components/Giscus";
 
 export default function BlogPage({ blog }: { blog: BlogPost }) {
   return (
