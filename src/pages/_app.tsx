@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <div>
         <Header theme={theme} setTheme={setTheme} />
         <div className="pageContent">
-          <Component {...pageProps} />
+          <Component {...pageProps} theme={theme} setTheme={setTheme} />
         </div>
       </div>
     </>
