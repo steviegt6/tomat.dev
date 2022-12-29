@@ -45,3 +45,35 @@ main {
   --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
   --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
 }
+
+main .pagination-loader-container {
+  background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg");
+}
+
+.gsc-pagination-button {
+  background-color: var(--color-btn-bg);
+}
+
+.gsc-homepage-bg {
+  background: linear-gradient(135deg, #05485c, #032e58, #2f0154);
+  background-size: 600% 600%;
+  animation: gradient 21s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 2% 0%;
+  }
+
+  50% {
+    background-position: 99% 100%;
+  }
+
+  100% {
+    background-position: 2% 0%;
+  }
+}
+
+main .gsc-loading-image {
+  background-image: url("https://github.githubassets.com/images/mona-loading-dark.gif");
+}
