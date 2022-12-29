@@ -44,17 +44,22 @@ main {
   --color-prettylights-syntax-brackethighlighter-angle: #8b949e;
   --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
   --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
-  --color-btn-text: #c9d1d9;
+
+  --color-btn-text: var(--foreground);
   --color-btn-bg: rgb(45 51 59 / 80%);
   --color-btn-border: rgb(240 246 252 / 10%);
   --color-btn-shadow: 0 0 transparent;
   --color-btn-inset-shadow: 0 0 transparent;
+
   --color-btn-hover-bg: rgb(45 51 59 / 50%);
   --color-btn-hover-border: #8b949e;
+
   --color-btn-active-bg: hsl(212deg 12% 18% / 50%);
   --color-btn-active-border: #6e7681;
+
   --color-btn-selected-bg: rgb(45 51 59 / 50%);
-  --color-btn-primary-text: #fff;
+
+  --color-btn-primary-text: var(--foreground);
   --color-btn-primary-bg: #238636;
   --color-btn-primary-border: rgb(240 246 252 / 10%);
   --color-btn-primary-shadow: 0 0 transparent;
@@ -66,30 +71,40 @@ main {
   --color-btn-primary-disabled-text: rgb(240 246 252 / 50%);
   --color-btn-primary-disabled-bg: rgb(35 134 54 / 60%);
   --color-btn-primary-disabled-border: rgb(240 246 252 / 10%);
-  --color-fg-default: #c9d1d9;
-  --color-fg-muted: #8b949e;
+
+  --color-fg-default: var(--foreground);
+  --color-fg-muted: #var(--sub-color);
   --color-fg-subtle: #484f58;
+
   --color-canvas-default: transparent;
   --color-canvas-overlay: rgb(22 27 34 / 90%);
   --color-canvas-inset: transparent;
   --color-canvas-subtle: transparent;
+
   --color-border-default: #30363d;
   --color-border-muted: #21262d;
+
   --color-neutral-muted: rgb(110 118 129 / 5%);
   --color-neutral-subtle: rgb(110 118 129 / 10%);
+
   --color-accent-fg: #58a6ff;
   --color-accent-emphasis: #1f6feb;
   --color-accent-muted: rgb(56 139 253 / 40%);
   --color-accent-subtle: rgb(56 139 253 / 15%);
+
   --color-success-fg: #3fb950;
+
   --color-attention-fg: #c69026;
   --color-attention-muted: rgb(174 124 20 / 40%);
   --color-attention-subtle: rgb(174 124 20 / 15%);
+
   --color-danger-fg: #f85149;
   --color-danger-muted: rgb(229 83 75 / 40%);
   --color-danger-subtle: rgb(229 83 75 / 15%);
+
   --color-primer-shadow-focus: 0 0 0 3px #0c2d6b;
   --color-primer-shadow-inset: 0 0 transparent;
+
   --color-scale-gray-7: #21262d;
   --color-scale-blue-8: #0c2d6b;
 

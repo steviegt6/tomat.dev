@@ -7,6 +7,7 @@ import {
   getRealSlug,
 } from "../../lib/blogPostManager";
 import Script from "next/script";
+import Giscus from "../../../giscus/components/Giscus";
 
 export default function BlogPage({ blog }: { blog: BlogPost }) {
   return (
@@ -14,23 +15,26 @@ export default function BlogPage({ blog }: { blog: BlogPost }) {
       {/* components={...components} */}
       <MDXRemote {...blog.content} />
       <div id="comments" className="giscus" />
-      <Script
-        src="https://giscus.app/client.js"
-        data-repo="steviegt6/tomat.dev"
-        data-repo-id="R_kgDOIVMDbA"
-        data-category="Blog Discussions"
-        data-category-id="DIC_kwDOIVMDbM4CTTiU"
-        data-mapping="pathname"
-        data-strict="1"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="transparent_dark"
-        data-lang="en"
-        data-loading="lazy"
-        crossOrigin="anonymous"
-        async
-      />
+      {/*<Giscus />*/}
+      {
+        <Script
+          src="https://giscus.app/client.js"
+          data-repo="steviegt6/tomat.dev"
+          data-repo-id="R_kgDOIVMDbA"
+          data-category="Blog Discussions"
+          data-category-id="DIC_kwDOIVMDbM4CTTiU"
+          data-mapping="pathname"
+          data-strict="1"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="https://tomat.dev/themes/giscus.css"
+          data-lang="en"
+          data-loading="lazy"
+          crossOrigin="anonymous"
+          async
+        />
+      }
     </div>
   );
 }
