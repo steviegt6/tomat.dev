@@ -28,7 +28,7 @@ main {
 
   --color-btn-selected-bg: rgb(45 51 59 / 50%);
 
-  --color-btn-primary-text: var(--foreground);
+  --color-btn-primary-text: #c9d1d9;
   --color-btn-primary-bg: #238636;
   --color-btn-primary-border: rgb(240 246 252 / 10%);
   --color-btn-primary-shadow: 0 0 transparent;
@@ -50,8 +50,8 @@ main {
   --color-canvas-inset: transparent;
   --color-canvas-subtle: transparent;
 
-  --color-border-default: #30363d;
-  --color-border-muted: #21262d;
+  --color-border-default: var(--background);
+  --color-border-muted: var(--sub-color);
 
   --color-neutral-muted: rgb(110 118 129 / 5%);
   --color-neutral-subtle: rgb(110 118 129 / 10%);
@@ -74,8 +74,8 @@ main {
   --color-primer-shadow-focus: 0 0 0 3px #0c2d6b;
   --color-primer-shadow-inset: 0 0 transparent;
 
-  --color-scale-gray-7: #21262d;
-  --color-scale-blue-8: #0c2d6b;
+  --color-scale-gray-7: var(--foreground); /*#21262d;*/
+  --color-scale-blue-8: var(--foreground); /*#0c2d6b;*/
 
   /*! Extensions from @primer/css/alerts/flash.scss */
   --color-social-reaction-bg-hover: var(--color-scale-gray-7);
