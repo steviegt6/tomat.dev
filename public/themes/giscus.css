@@ -48,7 +48,7 @@ main {
   --color-canvas-default: transparent;
   --color-canvas-overlay: rgb(22 27 34 / 90%);
   --color-canvas-inset: transparent;
-  --color-canvas-subtle: transparent;
+  --color-canvas-subtle: rgba(0 0 0 0.5);
 
   --color-border-default: var(--foreground);
   --color-border-muted: var(--sub-color);
