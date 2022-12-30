@@ -82,6 +82,12 @@ main {
   --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
 }
 
+/* Remove blue highlight when typing in main comment box. */
+.gsc-comment-box-main textarea {
+  box-shadow: none;
+  border-color: var(--foreground);
+}
+
 main .pagination-loader-container {
   background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg");
 }
