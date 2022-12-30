@@ -83,7 +83,7 @@ main {
 }
 
 /* Remove blue highlight when typing in main comment box. */
-.gsc-comment-box-textarea {
+.gsc-comment-box-textarea:focus {
   box-shadow: none;
   border-color: var(--foreground);
 }
