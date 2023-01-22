@@ -1,5 +1,8 @@
 {
     "editor.tabSize": 4,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "files.eol": "\n"
+    "files.eol": "\n",
+    "files.associations": {
+        "*.svg": "html"
+    }
 }
