@@ -7,18 +7,22 @@ import {
   getRealSlug,
 } from "../../lib/blogPostManager";
 import CommentsContainer from "../../components/CommentsContainer";
+import { Inter } from "@next/font/google";
 
-export default function BlogPage({
-  blog,
-  theme,
-}: {
+const inter = Inter({ subsets: ["latin"] });
+
+export interface BlogPageProps {
   blog: BlogPost;
   theme: string;
-}) {
+}
+
+export default function BlogPage({ blog, theme }: BlogPageProps) {
   return (
-    <div>
-      {/* components={...components} */}
-      <MDXRemote {...blog.content} />
+    <div className={inter.className}>
+      <div className="markdown-body">
+        {/* components={...components} */}
+        <MDXRemote {...blog.content} />
+      </div>
       <CommentsContainer
         theme={theme}
         repo="steviegt6/tomat.dev"

@@ -1,4 +1,4 @@
-/* @tailwind base; */
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -8,6 +8,12 @@
   --foreground: #eeeeee;
 
   --sub-color: #666666;
+}
+
+/* Override primer variables */
+:root {
+  --color-border-default: var(--sub-color);
+  --color-canvas-default: var(--background);
 }
 
 * {
