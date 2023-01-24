@@ -9,8 +9,9 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@pixi/react-pixi-tag-types": "file:./pixi-react/packages/react-pixi-tag-types",
+        "@pixi/react-pixi": "file:./pixi-react/packages/react-pixi",
         "@next/font": "13.1.4",
-        "@pixi/core": "^7.1.1",
         "@types/node": "18.11.18",
         "@types/react": "18.0.27",
         "@types/react-dom": "18.0.10",
