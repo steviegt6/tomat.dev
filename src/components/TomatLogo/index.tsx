@@ -1,4 +1,5 @@
 import { Sprite, Stage } from "@saitonakamura/react-pixi";
+import PixelateFilter from "lib/filters/pixelateFilter";
 
 export type TomatLogoProps = {
     width: number;
@@ -19,5 +20,14 @@ export default function TomatLogo({ width, height }: TomatLogoProps) {
 }
 
 function Logo({ width, height }: LogoProps) {
-    return <Sprite scale={[width / 100, height / 100]} image="/tomat.svg" anchor={0.5} x={width / 2} y={height / 2} />;
+    return (
+        <Sprite
+            filters={[new PixelateFilter()]}
+            scale={[width / 100, height / 100]}
+            image="/tomat.svg"
+            anchor={0.5}
+            x={width / 2}
+            y={height / 2}
+        />
+    );
 }
