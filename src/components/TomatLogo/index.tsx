@@ -89,7 +89,6 @@ function Logo({ width, height, interactable, stageSize }: LogoProps) {
         const sprite = ref.current;
         if (sprite) {
             const scale = easeInOutCubic(hoverElapsed) * 0.5;
-            console.log(scale);
             setHoverScale(scale);
         }
     });
