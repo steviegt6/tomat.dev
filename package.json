@@ -6,18 +6,20 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "postinstall": "patch-package"
     },
     "dependencies": {
-        "@pixi/react-pixi-tag-types": "file:./pixi-react/packages/react-pixi-tag-types",
-        "@pixi/react-pixi": "file:./pixi-react/packages/react-pixi",
         "@next/font": "13.1.4",
+        "@pixi/core": "^7.1.1",
+        "@pixi/react": "^7.0.0-alpha.1",
         "@types/node": "18.11.18",
         "@types/react": "18.0.27",
         "@types/react-dom": "18.0.10",
         "eslint": "8.32.0",
         "eslint-config-next": "13.1.4",
         "next": "13.1.4",
+        "patch-package": "^6.5.1",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "typescript": "4.9.4"
