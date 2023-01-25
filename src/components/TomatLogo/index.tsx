@@ -36,6 +36,7 @@ function Logo({ width, height, interactable, stageSize }: LogoProps) {
     const [hover, setHover] = useState(false);
     const [hoverElapsed, setHoverElapsed] = useState(0);
     const [hoverScale, setHoverScale] = useState(0);
+    const [opacity, setOpacity] = useState(0);
 
     useEffect(() => {
         if (!interactable) return;
@@ -75,11 +76,11 @@ function Logo({ width, height, interactable, stageSize }: LogoProps) {
         }
     });
 
-    useTick((delta) => {
-        function easeInOutCubic(x: number): number {
-            return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
-        }
+    function easeInOutCubic(x: number): number {
+        return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+    }
 
+    useTick((delta) => {
         // lazily slow down scaling lol
         delta /= 10;
 
@@ -93,6 +94,10 @@ function Logo({ width, height, interactable, stageSize }: LogoProps) {
         }
     });
 
+    useTick((delta) => {
+        setOpacity((opacity) => Math.min(opacity + delta * 0.01, 1));
+    });
+
     return (
         <Sprite
             ref={ref}
@@ -100,6 +105,7 @@ function Logo({ width, height, interactable, stageSize }: LogoProps) {
             width={width}
             height={height}
             skew={skew}
+            alpha={opacity}
             scale={1 + pulseScale + hoverScale}
             image="/icon-themeable.svg"
             anchor={0.5}
