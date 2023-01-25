@@ -12,7 +12,7 @@ export default function Home() {
         <BasicLayout title={title} description={description}>
             <main className="w-full h-full">
                 <div className="w-full h-full flex justify-center items-center">
-                    <TomatLogo width={250} height={250} />
+                    <TomatLogo width={250} height={250} interactable />
                 </div>
             </main>
         </BasicLayout>
