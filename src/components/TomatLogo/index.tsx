@@ -81,6 +81,8 @@ function Logo({ width, height, interactable, stageSize }: LogoProps) {
     }
 
     useTick((delta) => {
+        if (!interactable) return;
+    
         // lazily slow down scaling lol
         delta /= 10;
 
@@ -95,6 +97,11 @@ function Logo({ width, height, interactable, stageSize }: LogoProps) {
     });
 
     useTick((delta) => {
+        if (!interactable) {
+            setOpacity(1);
+            return;
+        }
+    
         setOpacity((opacity) => Math.min(opacity + delta * 0.01, 1));
     });
 
