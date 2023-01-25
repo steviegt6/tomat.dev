@@ -1,3 +1,4 @@
+import { AsciiFilter } from "@pixi/filter-ascii";
 import { Sprite, Stage } from "@pixi/react";
 import PixelateFilter from "lib/filters/pixelateFilter";
 
@@ -9,25 +10,26 @@ export type TomatLogoProps = {
 type LogoProps = {
     width: number;
     height: number;
+    stageSize: number;
 };
 
 export default function TomatLogo({ width, height }: TomatLogoProps) {
+    const stageSize = Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2));
     return (
-        <Stage width={width} height={height} options={{ backgroundAlpha: 0 }}>
-            <Logo width={width} height={height} />
+        <Stage width={stageSize} height={stageSize} options={{ backgroundAlpha: 0 }}>
+            <Logo width={width} height={height} stageSize={stageSize} />
         </Stage>
     );
 }
 
-function Logo({ width, height }: LogoProps) {
+function Logo({ width, height, stageSize }: LogoProps) {
     return (
         <Sprite
-            filters={[new PixelateFilter(3)]}
+            filters={[new AsciiFilter(6)]}
             scale={[width / 100, height / 100]}
-            image="/tomat.svg"
+            image="/icon-themeable.svg"
             anchor={0.5}
-            x={width / 2}
-            y={height / 2}
+            position={stageSize / 2}
         />
     );
 }

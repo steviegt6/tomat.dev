@@ -1,12 +1,14 @@
+// Taken and modified from:
 // MIT License - Copyright (c) 2013-2017 Mathew Groves, Chad Engler
 // https://github.com/pixijs/filters/blob/main/filters/pixelate/src/pixelate.frag
 
-export const pixelate = `
-precision mediump float;
+export const pixelate = `precision mediump float;
 
 varying vec2 vTextureCoord;
 
 uniform vec2 size;
+uniform bool useThreshold;
+uniform float threshold;
 uniform sampler2D uSampler;
 
 uniform vec4 filterArea;
@@ -41,5 +43,10 @@ void main(void)
     coord = unmapCoord(coord);
 
     gl_FragColor = texture2D(uSampler, coord);
-}
-`;
+    if (useThreshold) {
+        if (gl_FragColor.w < threshold)
+            gl_FragColor.w = 0.;
+        else if (gl_FragColor.w >= threshold)
+            gl_FragColor.w = 1.;
+    }
+}`;

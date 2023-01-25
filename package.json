@@ -12,6 +12,7 @@
     "dependencies": {
         "@next/font": "13.1.4",
         "@pixi/core": "^7.1.1",
+        "@pixi/filter-ascii": "^5.1.1",
         "@pixi/react": "^7.0.0-alpha.1",
         "@types/node": "18.11.18",
         "@types/react": "18.0.27",

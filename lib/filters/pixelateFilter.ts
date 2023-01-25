@@ -17,12 +17,15 @@ type Size = number | number[] | Point;
  * @see {@link https://www.npmjs.com/package/pixi-filters|pixi-filters}
  */
 export default class PixelateFilter extends Filter {
+    threshold: number | undefined;
+
     /**
      * @param {PIXI.Point|Array<number>|number} [size=10] - Either the width/height of the size of the pixels, or square size
      */
-    constructor(size: Size = 10) {
+    constructor(size: Size = 10, threshold?: number | undefined) {
         super(vertexDefault, pixelate);
         this.size = size;
+        this.threshold = threshold;
     }
 
     /**
@@ -40,5 +43,7 @@ export default class PixelateFilter extends Filter {
             value = [value, value];
         }
         this.uniforms.size = value;
+        this.uniforms.useThreshold = this.threshold !== undefined;
+        this.uniforms.threshold = this.threshold || 0;
     }
 }
