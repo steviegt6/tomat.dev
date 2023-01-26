@@ -1,10 +1,58 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="100" height="100">
+    <!--<linearGradient id="gradient">
+        <stop class="s0" offset="0%" />
+        <stop class="s1" offset="10%" />
+        <stop class="s2" offset="20%" />
+        <stop class="s3" offset="30%" />
+        <stop class="s4" offset="40%" />
+        <stop class="s5" offset="50%" />
+        <stop class="s6" offset="60%" />
+        <stop class="s7" offset="70%" />
+        <stop class="s8" offset="80%" />
+        <stop class="s9" offset="90%" />
+        <stop class="s10" offset="100%" />
+        <animate attributeName="offset" dur="2s" from="100%" to="0%" repeatCount="indefinite" />
+    </linearGradient>-->
     <style>
         :root {
             --tomato-red: #a95551;
             --tomato-green: #98bd5e;
             --tomato-blue: #82aaff;
         }
+
+        <!--.s0 {
+            stop-color: rgba(255, 0, 0, 1);
+        }
+        .s1 {
+            stop-color: rgba(255, 154, 0, 1);
+        }
+        .s2 {
+            stop-color: rgba(208, 222, 33, 1);
+        }
+        .s3 {
+            stop-color: rgba(79, 220, 74, 1);
+        }
+        .s4 {
+            stop-color: rgba(63, 218, 216, 1);
+        }
+        .s5 {
+            stop-color: rgba(47, 201, 226, 1);
+        }
+        .s6 {
+            stop-color: rgba(28, 127, 238, 1);
+        }
+        .s7 {
+            stop-color: rgba(95, 21, 242, 1);
+        }
+        .s8 {
+            stop-color: rgba(186, 12, 248, 1);
+        }
+        .s9 {
+            stop-color: rgba(251, 7, 217, 1);
+        }
+        .s10 {
+            stop-color: rgba(255, 0, 0, 1);
+        }-->
     </style>
     <path
         d="M22.494 5.344c-.687 0-1.352.066-1.991.177-.819-.104-2.74-.231-3.591-.231-8.473 0-15.886 3.177-15.886 14.298 0 9.036 7.049 16.361 16.976 16.361s17.974-7.325 17.974-16.361C35.975 8.339 26.59 5.344 22.494 5.344z"
