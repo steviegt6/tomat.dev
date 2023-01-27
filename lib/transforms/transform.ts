@@ -1,6 +1,6 @@
-import { IEasingFunction } from "lib/transforms/easing";
+import { DefaultEasingFunction, IEasingFunction } from "lib/transforms/easing";
 
-export default function transform<T>(
+export function transform<T>(
     object: T,
     easing: IEasingFunction,
     duration: number,
@@ -13,7 +13,10 @@ export default function transform<T>(
     let reversed: boolean = false;
     let callbackWrapper = (object: T, progress: number) => {
         if (reversed) callback(object, 1 - progress);
-        else callback(object, progress);
+        else {
+            console.log(callback, object, progress);
+            callback(object, progress);
+        }
     };
 
     function step(timestamp: number) {
@@ -35,4 +38,18 @@ export default function transform<T>(
     }
 
     window.requestAnimationFrame(step);
+}
+
+export function waitAndTransform<T>(
+    waitTime: number,
+    object: T,
+    easing: IEasingFunction,
+    duration: number,
+    callback: (object: T, progress: number) => void,
+    repeating: boolean = false,
+    reverses: boolean = false
+) {
+    transform(null, DefaultEasingFunction.linear, waitTime, (_, progress) => {
+        if (progress == 1) transform(object, easing, duration, callback, repeating, reverses);
+    });
 }
