@@ -183,6 +183,9 @@ function Logo({ width, height, interactable, clickable, stageSize, setDisplayChi
                     onclick={() => {
                         if (clickable) onClick();
                     }}
+                    ontap={() => {
+                        if (clickable) onClick();
+                    }}
                 />
             )}
         </>
