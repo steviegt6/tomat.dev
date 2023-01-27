@@ -4,6 +4,7 @@ import { DefaultEasingFunction } from "lib/transforms/easing";
 import { CSSProperties, Dispatch, RefObject, SetStateAction, useEffect, useRef, useState } from "react";
 import { clamp } from "lib/math";
 import { transform, waitAndTransform } from "lib/transforms/transform";
+import OpaqueFilter from "lib/filters/opaqueFilter";
 
 export type TomatLogoProps = {
     width: number;
@@ -169,7 +170,7 @@ function Logo({ width, height, interactable, clickable, stageSize, setDisplayChi
             ) : (
                 <Sprite
                     ref={ref}
-                    filters={[new AsciiFilter(6)]}
+                    filters={[new AsciiFilter(6), new OpaqueFilter(ref.current?.alpha ?? 1, [12, 12, 12])]}
                     width={width}
                     height={height}
                     skew={skew}
