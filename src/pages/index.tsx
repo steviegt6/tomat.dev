@@ -13,7 +13,9 @@ export default function Home() {
             <main className="w-full h-full">
                 <div className="w-full h-full flex justify-center items-center">
                     <TomatLogo width={250} height={250} interactable clickable>
-                        <h1>Generally, I&apos;m a modest guy.</h1>
+                        <h1>
+                            <em>Generally, I&apos;m a modest guy.</em>
+                        </h1>
                     </TomatLogo>
                 </div>
             </main>
