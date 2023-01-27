@@ -13,10 +13,7 @@ export function transform<T>(
     let reversed: boolean = false;
     let callbackWrapper = (object: T, progress: number) => {
         if (reversed) callback(object, 1 - progress);
-        else {
-            console.log(callback, object, progress);
-            callback(object, progress);
-        }
+        else callback(object, progress);
     };
 
     function step(timestamp: number) {
