@@ -174,7 +174,7 @@ function Logo({ width, height, interactable, clickable, stageSize, setDisplayChi
                     width={width}
                     height={height}
                     skew={skew}
-                    scale={state === DisplayState.Idle ? 2 + pulseScale + hoverScale : expansionScale}
+                    scale={state === DisplayState.Idle ? 2.25 + pulseScale + hoverScale : expansionScale}
                     image="/icon-themeable.svg"
                     anchor={0.5}
                     position={[position[0] + offset[0], position[1] + offset[1]]}

@@ -1,19 +1,4 @@
-import { Filter } from "@pixi/core";
-
-const vertex = `
-attribute vec2 aVertexPosition;
-attribute vec2 aTextureCoord;
-
-uniform mat3 projectionMatrix;
-
-varying vec2 vTextureCoord;
-
-void main(void)
-{
-    gl_Position = vec4((projectionMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);
-    vTextureCoord = aTextureCoord;
-}
-`;
+import { defaultVertex, Filter } from "@pixi/core";
 
 const fragment = `
 varying vec2 vTextureCoord;
@@ -29,8 +14,8 @@ void main()
     vec4 color = texture2D(uSampler, vTextureCoord.xy);
 
     if (color.a == 0.0) {
-        color.rgb = vec3(bgR / 255.0, bgG / 255.0, bgB / 255.0);
-        color.rgb *= (color.a = alpha);
+        //color.rgb = vec3(bgR / 255.0, bgG / 255.0, bgB / 255.0);
+        //color.rgb *= (color.a = alpha);
     }
 
     gl_FragColor = color;
@@ -39,7 +24,7 @@ void main()
 
 export default class OpaqueFilter extends Filter {
     constructor(alpha: number, backgroundColor: [number, number, number]) {
-        super(vertex, fragment);
+        super(defaultVertex, fragment);
         this.alpha = alpha;
         this.backgroundColor = backgroundColor;
     }
