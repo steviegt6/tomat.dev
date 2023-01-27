@@ -1,6 +1,9 @@
 import { AsciiFilter } from "@pixi/filter-ascii";
 import { PixiRef, Sprite, Stage, useTick } from "@pixi/react";
+import { DefaultEasingFunction } from "lib/transforms/easing";
 import { useEffect, useRef, useState } from "react";
+import transform from "lib/transforms/transform";
+import { clamp } from "lib/math";
 
 export type TomatLogoProps = {
     width: number;
@@ -31,78 +34,47 @@ function Logo({ width, height, interactable, stageSize }: LogoProps) {
     const offset = stageSize / 2;
     const [skew, setSkew] = useState<[number, number]>([0, 0]);
     const [position, setPosition] = useState<[number, number]>([0, 0]);
-    const [pulseElapsed, setPulseElapsed] = useState(0);
     const [pulseScale, setPulseScale] = useState(0);
-    const [hover, setHover] = useState(false);
-    const [hoverElapsed, setHoverElapsed] = useState(0);
+    const [hover, setHover] = useState<boolean>(false);
     const [hoverScale, setHoverScale] = useState(0);
-    const [opacity, setOpacity] = useState(0);
 
     useEffect(() => {
-        if (!interactable) return;
+        if (!ref.current) return;
+
+        if (!interactable) {
+            ref.current.alpha = 1;
+            return;
+        }
+
         window.addEventListener("mousemove", (ev) => {
-            /*//setSkew([ev.clientY / window.innerHeight - 0.5, ev.clientX / window.innerWidth - 0.5]);
-            //setSkew([ev.clientY / window.innerHeight - 0.5, -(ev.clientY / window.innerHeight - 0.5)]);
-            //setSkew([ev.clientX / window.innerWidth - 0.5, -(ev.clientX / window.innerWidth - 0.5)]);
-            //setSkew([ev.clientX / window.innerHeight - 0.5, 0]);
-
-            // setSkew([-1, 0.5]);
-
-            //const sprite = ref.current;
-            //if (sprite) {
-            //    console.log(sprite.transform);
-            //
-            //    sprite.transform.setRotation2d(1, 1);
-            //    /*sprite.rotation = Math.atan2(
-            //        ev.clientY / window.innerHeight - 0.5,
-            //        ev.clientX / window.innerWidth - 0.5
-            //    );*/
-            //}*/
-
             // parallax
             setPosition([(ev.clientX / window.innerWidth - 0.5) * 30, (ev.clientY / window.innerHeight - 0.5) * 30]);
         });
-    }, [setSkew, ref, interactable]);
+
+        // fade in on load
+        transform(ref.current, DefaultEasingFunction.inCubic, 1500, (object, progress) => (object.alpha = progress));
+
+        // add scaling breathing effect
+        transform(
+            ref.current,
+            DefaultEasingFunction.inOutSine,
+            1000,
+            (_, progress) => {
+                setPulseScale(progress * 0.1);
+            },
+            true,
+            true
+        );
+    }, [setSkew, setPulseScale, ref, interactable]);
 
     useTick((delta) => {
-        if (!interactable) return;
+        if (!ref.current || !interactable) return;
+        const scaleMin = 0;
+        const scaleMax = 0.5;
+        console.log(delta);
+        const scaleDiff = (hover ? 0.075 : -0.075) * delta;
 
-        setPulseElapsed((pulseElapsed) => pulseElapsed + delta);
-
-        const sprite = ref.current;
-        if (sprite) {
-            const scale = 1 + Math.sin(pulseElapsed * 0.05) * 0.05;
-            setPulseScale(scale);
-        }
-    });
-
-    function easeInOutCubic(x: number): number {
-        return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
-    }
-
-    useTick((delta) => {
-        if (!interactable) return;
-    
-        // lazily slow down scaling lol
-        delta /= 10;
-
-        if (hover) setHoverElapsed((hoverElapsed) => Math.min(hoverElapsed + delta, 1));
-        else setHoverElapsed((hoverElapsed) => Math.max(hoverElapsed - delta, 0));
-
-        const sprite = ref.current;
-        if (sprite) {
-            const scale = easeInOutCubic(hoverElapsed) * 0.5;
-            setHoverScale(scale);
-        }
-    });
-
-    useTick((delta) => {
-        if (!interactable) {
-            setOpacity(1);
-            return;
-        }
-    
-        setOpacity((opacity) => Math.min(opacity + delta * 0.01, 1));
+        setHoverScale((prev) => clamp(prev + scaleDiff, scaleMin, scaleMax));
     });
 
     return (
@@ -112,8 +84,7 @@ function Logo({ width, height, interactable, stageSize }: LogoProps) {
             width={width}
             height={height}
             skew={skew}
-            alpha={opacity}
-            scale={1 + pulseScale + hoverScale}
+            scale={2 + pulseScale + hoverScale}
             image="/icon-themeable.svg"
             anchor={0.5}
             position={[position[0] + offset, position[1] + offset]}
