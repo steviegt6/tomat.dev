@@ -29,9 +29,8 @@ void main()
     vec4 color = texture2D(uSampler, vTextureCoord.xy);
 
     if (color.a == 0.0) {
-        color.rgb = vec3(12.0 / 255.0, 12.0 / 255.0, 12.0 / 255.0);
-        color.a = alpha;
-        color.rgb *= alpha;
+        color.rgb = vec3(bgR / 255.0, bgG / 255.0, bgB / 255.0);
+        color.rgb *= (color.a = alpha);
     }
 
     gl_FragColor = color;
