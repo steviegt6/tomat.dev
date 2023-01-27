@@ -85,7 +85,7 @@ enum DisplayState {
     Hidden
 }
 
-function Logo({ width, height, interactable, stageSize, setDisplayChildren }: LogoProps) {
+function Logo({ width, height, interactable, clickable, stageSize, setDisplayChildren }: LogoProps) {
     const ref = useRef<PixiRef<typeof Sprite>>(null);
 
     const offset: [number, number] = [stageSize[0] / 2, stageSize[1] / 2];
@@ -180,7 +180,9 @@ function Logo({ width, height, interactable, stageSize, setDisplayChildren }: Lo
                     interactive={interactable}
                     onmouseenter={() => setHover(true)}
                     onmouseleave={() => setHover(false)}
-                    onclick={() => onClick()}
+                    onclick={() => {
+                        if (clickable) onClick();
+                    }}
                 />
             )}
         </>
