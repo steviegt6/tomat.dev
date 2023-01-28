@@ -9,8 +9,8 @@ const description = "Hello, world!";
 
 export default function Home() {
     return (
-        <BasicLayout title={title} description={description}>
-            <LogoLayout width={250} height={250} interactable clickable>
+        <LogoLayout width={250} height={250} interactable clickable>
+            <BasicLayout title={title} description={description}>
                 <main className="w-full h-full">
                     <div className="w-full h-full flex justify-center items-center">
                         <h1>
@@ -18,7 +18,7 @@ export default function Home() {
                         </h1>
                     </div>
                 </main>
-            </LogoLayout>
-        </BasicLayout>
+            </BasicLayout>
+        </LogoLayout>
     );
 }
