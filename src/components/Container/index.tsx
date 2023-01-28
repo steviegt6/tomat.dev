@@ -12,9 +12,6 @@ export default function Container(props: ContainerProps) {
     return (
         <>
             <Head>
-                {/* Using {title} directly causes hydration errors? */}
-                {/* Counts as giving it more than one child element... */}
-                {/* Other quirks include appending <!-- --> somehow?? */}
                 <title>{`${meta.title} | tomat.dev`}</title>
                 <meta content={meta.description} name="description" />
             </Head>
