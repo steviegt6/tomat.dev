@@ -16,7 +16,6 @@ export default class SilentErrorBoundary extends React.Component<SilentErrorBoun
     }
 
     componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-        // eslint-disable-next-line no-console
         console.error("SilentErrorBoundary caught an error", error, errorInfo);
     }
 
