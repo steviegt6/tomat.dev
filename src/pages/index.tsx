@@ -2,8 +2,6 @@ import { Inter } from "@next/font/google";
 import Container from "@/components/Container";
 import LogoContainer from "@/components/LogoContainer";
 
-const inter = Inter({ subsets: ["latin"] });
-
 const title = "/";
 const description = "Hello, world!";
 
