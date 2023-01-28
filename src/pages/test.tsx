@@ -1,6 +1,7 @@
 import { Inter } from "@next/font/google";
 import BasicLayout from "@/components/BasicLayout";
 import TomatLogo from "@/components/TomatLogo";
+import LogoLayout from "@/components/LogoLayout";
 
 const title = "/test";
 const description = "rr";
@@ -8,9 +9,9 @@ const description = "rr";
 export default function Test() {
     return (
         <BasicLayout title={title} description={description}>
-            <main className="w-full h-full">
-                <div className="w-full h-full flex justify-center items-center">
-                    <TomatLogo width={250} height={250} interactable clickable>
+            <LogoLayout width={250} height={250} interactable clickable>
+                <main className="w-full h-full">
+                    <div className="w-full h-full flex justify-center items-center">
                         <iframe
                             width="560"
                             height="315"
@@ -20,9 +21,9 @@ export default function Test() {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen
                         ></iframe>
-                    </TomatLogo>
-                </div>
-            </main>
+                    </div>
+                </main>
+            </LogoLayout>
         </BasicLayout>
     );
 }
