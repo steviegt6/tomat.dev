@@ -1,6 +1,6 @@
 import { Inter } from "@next/font/google";
 import Container from "@/components/Container";
-import LogoLayout from "@/components/LogoLayout";
+import LogoContainer from "@/components/LogoContainer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,7 +9,7 @@ const description = "Hello, world!";
 
 export default function Home() {
     return (
-        <LogoLayout width={250} height={250} interactable clickable>
+        <LogoContainer width={250} height={250} interactable clickable>
             <Container title={title} description={description}>
                 <main className="w-full h-full">
                     <div className="w-full h-full flex justify-center items-center">
@@ -19,6 +19,6 @@ export default function Home() {
                     </div>
                 </main>
             </Container>
-        </LogoLayout>
+        </LogoContainer>
     );
 }
