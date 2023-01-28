@@ -6,7 +6,7 @@ export type BasicLayoutProps = PropsWithChildren<{
     description: string;
 }>;
 
-export default function BasicLayout({ title, description, children }: BasicLayoutProps) {
+export default function Container({ title, description, children }: BasicLayoutProps) {
     return (
         <>
             <Head>

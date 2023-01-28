@@ -1,15 +1,13 @@
-import { Inter } from "@next/font/google";
-import BasicLayout from "@/components/BasicLayout";
-import TomatLogo from "@/components/TomatLogo";
-import LogoLayout from "@/components/LogoLayout";
+import Container from "@/components/Container";
+import LogoContainer from "@/components/LogoContainer";
 
 const title = "/test";
 const description = "rr";
 
 export default function Test() {
     return (
-        <LogoLayout width={250} height={250} interactable clickable>
-            <BasicLayout title={title} description={description}>
+        <LogoContainer width={250} height={250} interactable clickable>
+            <Container title={title} description={description}>
                 <main className="w-full h-full">
                     <div className="w-full h-full flex justify-center items-center">
                         <iframe
@@ -22,7 +20,7 @@ export default function Test() {
                         ></iframe>
                     </div>
                 </main>
-            </BasicLayout>
-        </LogoLayout>
+            </Container>
+        </LogoContainer>
     );
 }

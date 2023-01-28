@@ -1,5 +1,5 @@
 import { Inter } from "@next/font/google";
-import BasicLayout from "@/components/BasicLayout";
+import Container from "@/components/Container";
 import LogoLayout from "@/components/LogoLayout";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -10,7 +10,7 @@ const description = "Hello, world!";
 export default function Home() {
     return (
         <LogoLayout width={250} height={250} interactable clickable>
-            <BasicLayout title={title} description={description}>
+            <Container title={title} description={description}>
                 <main className="w-full h-full">
                     <div className="w-full h-full flex justify-center items-center">
                         <h1>
@@ -18,7 +18,7 @@ export default function Home() {
                         </h1>
                     </div>
                 </main>
-            </BasicLayout>
+            </Container>
         </LogoLayout>
     );
 }
