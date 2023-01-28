@@ -60,6 +60,7 @@ export default function TomatLogo({
 
     return (
         <>
+            <noscript>{children}</noscript>
             {displayChildren ? children : <></>}
             <Stage
                 width={stageSize[0]}
