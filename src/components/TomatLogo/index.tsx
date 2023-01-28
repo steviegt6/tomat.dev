@@ -158,7 +158,7 @@ function Logo({ width, height, interactable, clickable, stageSize, state, setSta
         transform(
             ref.current,
             DefaultEasingFunction.inBack,
-            1000,
+            700,
             (object, progress) => {
                 if (!object.transform) return;
                 setExpansionScale([object.scale.x + progress * 1, object.scale.y + progress * 1]);
@@ -167,7 +167,7 @@ function Logo({ width, height, interactable, clickable, stageSize, state, setSta
             true
         );
 
-        waitAndTransform(2000, ref.current, DefaultEasingFunction.linear, 3000, (object, progress) => {
+        waitAndTransform(1000, ref.current, DefaultEasingFunction.linear, 1000, (object, progress) => {
             object.alpha = 1 - progress;
             setDisplayChildren(true);
 
