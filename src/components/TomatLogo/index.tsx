@@ -5,6 +5,7 @@ import { CSSProperties, Dispatch, RefObject, SetStateAction, useEffect, useRef, 
 import { clamp } from "lib/math";
 import { transform, waitAndTransform } from "lib/transforms/transform";
 import OpaqueFilter from "lib/filters/opaqueFilter";
+import SilentErrorBoundary from "../SilentErrorBoundary";
 
 export type TomatLogoProps = {
     width: number;
@@ -62,21 +63,23 @@ export default function TomatLogo({
         <>
             <noscript>{children}</noscript>
             {displayChildren ? children : <></>}
-            <Stage
-                width={stageSize[0]}
-                height={stageSize[1]}
-                options={{ backgroundAlpha: 0 }}
-                style={clickable ? style : {}}
-            >
-                <Logo
-                    width={width}
-                    height={height}
-                    interactable={interactable}
-                    clickable={clickable}
-                    stageSize={stageSize}
-                    setDisplayChildren={setDisplayChildren}
-                />
-            </Stage>
+            <SilentErrorBoundary fallback={children}>
+                <Stage
+                    width={stageSize[0]}
+                    height={stageSize[1]}
+                    options={{ backgroundAlpha: 0 }}
+                    style={clickable ? style : {}}
+                >
+                    <Logo
+                        width={width}
+                        height={height}
+                        interactable={interactable}
+                        clickable={clickable}
+                        stageSize={stageSize}
+                        setDisplayChildren={setDisplayChildren}
+                    />
+                </Stage>
+            </SilentErrorBoundary>
         </>
     );
 }
