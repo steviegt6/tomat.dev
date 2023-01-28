@@ -15,12 +15,20 @@ export type TomatLogoProps = {
     children?: JSX.Element;
 };
 
+enum DisplayState {
+    Idle,
+    Expanding,
+    Hidden
+}
+
 type LogoProps = {
     width: number;
     height: number;
     interactable: boolean;
     clickable: boolean;
     stageSize: [number, number];
+    state: DisplayState;
+    setState: Dispatch<SetStateAction<DisplayState>>;
     setDisplayChildren: Dispatch<SetStateAction<boolean>>;
 };
 
@@ -32,6 +40,7 @@ export default function TomatLogo({
     children = <></>
 }: TomatLogoProps) {
     const [displayChildren, setDisplayChildren] = useState(false);
+    const [state, setState] = useState(DisplayState.Idle);
     const [stageSize, setStageSize] = useState<[number, number]>(() => {
         const both = interactable ? Math.sqrt(Math.pow(width, 2)) : Math.max(width, height) + 10;
         return [both, both];
@@ -64,33 +73,33 @@ export default function TomatLogo({
             <noscript>{children}</noscript>
             {displayChildren ? children : <></>}
             <SilentErrorBoundary fallback={children}>
-                <Stage
-                    width={stageSize[0]}
-                    height={stageSize[1]}
-                    options={{ backgroundAlpha: 0 }}
-                    style={clickable ? style : {}}
-                >
-                    <Logo
-                        width={width}
-                        height={height}
-                        interactable={interactable}
-                        clickable={clickable}
-                        stageSize={stageSize}
-                        setDisplayChildren={setDisplayChildren}
-                    />
-                </Stage>
+                {state !== DisplayState.Hidden ? (
+                    <Stage
+                        width={stageSize[0]}
+                        height={stageSize[1]}
+                        options={{ backgroundAlpha: 0 }}
+                        style={clickable ? style : {}}
+                    >
+                        <Logo
+                            width={width}
+                            height={height}
+                            interactable={interactable}
+                            clickable={clickable}
+                            stageSize={stageSize}
+                            state={state}
+                            setState={setState}
+                            setDisplayChildren={setDisplayChildren}
+                        />
+                    </Stage>
+                ) : (
+                    <></>
+                )}
             </SilentErrorBoundary>
         </>
     );
 }
 
-enum DisplayState {
-    Idle,
-    Expanding,
-    Hidden
-}
-
-function Logo({ width, height, interactable, clickable, stageSize, setDisplayChildren }: LogoProps) {
+function Logo({ width, height, interactable, clickable, stageSize, state, setState, setDisplayChildren }: LogoProps) {
     const ref = useRef<PixiRef<typeof Sprite>>(null);
 
     const offset: [number, number] = [stageSize[0] / 2, stageSize[1] / 2];
@@ -99,7 +108,6 @@ function Logo({ width, height, interactable, clickable, stageSize, setDisplayChi
     const [pulseScale, setPulseScale] = useState(0);
     const [hover, setHover] = useState<boolean>(false);
     const [hoverScale, setHoverScale] = useState(0);
-    const [state, setState] = useState(DisplayState.Idle);
     const [expansionScale, setExpansionScale] = useState<[number, number]>([0, 0]);
 
     useEffect(() => {
@@ -168,31 +176,25 @@ function Logo({ width, height, interactable, clickable, stageSize, setDisplayChi
     }
 
     return (
-        <>
-            {state === DisplayState.Hidden ? (
-                <></>
-            ) : (
-                <Sprite
-                    ref={ref}
-                    filters={[new AsciiFilter(6), new OpaqueFilter(ref.current?.alpha ?? 1, [12, 12, 12])]}
-                    width={width}
-                    height={height}
-                    skew={skew}
-                    scale={state === DisplayState.Idle ? 2 + pulseScale + hoverScale : expansionScale}
-                    image="/icon-themeable.svg"
-                    anchor={0.5}
-                    position={[position[0] + offset[0], position[1] + offset[1]]}
-                    interactive={interactable}
-                    onmouseenter={() => setHover(true)}
-                    onmouseleave={() => setHover(false)}
-                    onclick={() => {
-                        if (clickable) onClick();
-                    }}
-                    ontap={() => {
-                        if (clickable) onClick();
-                    }}
-                />
-            )}
-        </>
+        <Sprite
+            ref={ref}
+            filters={[new AsciiFilter(6), new OpaqueFilter(ref.current?.alpha ?? 1, [12, 12, 12])]}
+            width={width}
+            height={height}
+            skew={skew}
+            scale={state === DisplayState.Idle ? 2 + pulseScale + hoverScale : expansionScale}
+            image="/icon-themeable.svg"
+            anchor={0.5}
+            position={[position[0] + offset[0], position[1] + offset[1]]}
+            interactive={interactable}
+            onmouseenter={() => setHover(true)}
+            onmouseleave={() => setHover(false)}
+            onclick={() => {
+                if (clickable) onClick();
+            }}
+            ontap={() => {
+                if (clickable) onClick();
+            }}
+        />
     );
 }
