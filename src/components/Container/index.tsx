@@ -23,6 +23,7 @@ export default function Container(props: ContainerProps) {
                 <title>{meta.title}</title>
                 <meta content={meta.description} name="description" />
                 <link rel="canonical" href={`${canonical}${router.asPath}`} />
+                <OgMeta {...meta} url={router.asPath} />
                 <TwitterMeta {...meta} />
             </Head>
             {children}
@@ -32,7 +33,7 @@ export default function Container(props: ContainerProps) {
 
 type MetaProps = Omit<ContainerProps, "children">;
 
-function OgMeta({ title, description, image }: MetaProps) {
+function OgMeta({ title, description, image, url }: MetaProps & { url: string }) {
     return (
         <>
             <meta property="og:title" content={title} />
@@ -41,13 +42,15 @@ function OgMeta({ title, description, image }: MetaProps) {
             <meta property="og:type" content="website" />
             <meta property="og:image" content={image} />
             <meta property="og:locale" content="en_US" />
+            <meta property="og:url" content={`${canonical}${url}`} />
         </>
     );
 }
 
-function TwitterMeta({ description, image }: MetaProps) {
+function TwitterMeta({ title, description, image }: MetaProps) {
     return (
         <>
+            <meta property="og:title" content={title} />
             <meta name="twitter:site" content="@tomatdev" />
             <meta name="twitter:creator" content="@tomatdev" />
             <meta name="twitter:description" content={description} />
