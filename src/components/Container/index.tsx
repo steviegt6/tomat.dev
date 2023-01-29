@@ -15,6 +15,7 @@ export default function Container(props: ContainerProps) {
     const router = useRouter();
 
     meta.title = `${meta.title} | tomat.dev`;
+    meta.image = meta.image || `${canonical}/banner.png`;
 
     return (
         <>
@@ -31,6 +32,19 @@ export default function Container(props: ContainerProps) {
 
 type MetaProps = Omit<ContainerProps, "children">;
 
+function OgMeta({ title, description, image }: MetaProps) {
+    return (
+        <>
+            <meta property="og:title" content={title} />
+            <meta property="og:description" content={description} />
+            <meta property="og:site_name" content="tomat" />
+            <meta property="og:type" content="website" />
+            <meta property="og:image" content={image} />
+            <meta property="og:locale" content="en_US" />
+        </>
+    );
+}
+
 function TwitterMeta({ description, image }: MetaProps) {
     return (
         <>
@@ -38,7 +52,7 @@ function TwitterMeta({ description, image }: MetaProps) {
             <meta name="twitter:creator" content="@tomatdev" />
             <meta name="twitter:description" content={description} />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:image" content={image || "/banner.png"} />
+            <meta name="twitter:image" content={image} />
         </>
     );
 }
