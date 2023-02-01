@@ -1,8 +1,14 @@
 import Link from "next/link";
 import { Dispatch, SetStateAction, useState } from "react";
 
+export type NavItem = {
+    href: string;
+    text: string;
+    external: boolean;
+};
+
 export type LayoutProps = React.PropsWithChildren<{
-    navItems: string[];
+    navItems: NavItem[];
 }>;
 
 export default function Layout({ navItems, children }: LayoutProps) {
@@ -30,7 +36,7 @@ export default function Layout({ navItems, children }: LayoutProps) {
 export type NavBarProps = {
     active: boolean;
     setActive: Dispatch<SetStateAction<boolean>>;
-    navItems: string[];
+    navItems: NavItem[];
 };
 
 function NavBar({ active, setActive, navItems }: NavBarProps) {
@@ -49,21 +55,31 @@ function NavBar({ active, setActive, navItems }: NavBarProps) {
 }
 
 export type NavLinksProps = {
-    navItems: string[];
+    navItems: NavItem[];
 };
 
 function NavLinks({ navItems }: NavLinksProps) {
     return (
         <>
-            {navItems.map((navItem: string, i: number) => (
-                <Link
-                    key={i}
-                    className="capitalize px-2 py-1 hover:bg-neutral-800 rounded-md inline-block"
-                    href={`/${navItem}`}
-                >
-                    {navItem}
-                </Link>
-            ))}
+            {navItems.map((navItem) =>
+                navItem.external ? (
+                    <a
+                        key={navItem.text}
+                        className="capitalize px-2 py-1 hover:bg-neutral-800 rounded-md inline-block"
+                        href={navItem.href}
+                    >
+                        {navItem.text}
+                    </a>
+                ) : (
+                    <Link
+                        key={navItem.text}
+                        className="capitalize px-2 py-1 hover:bg-neutral-800 rounded-md inline-block"
+                        href={navItem.href}
+                    >
+                        {navItem.text}
+                    </Link>
+                )
+            )}
         </>
     );
 }

@@ -1,9 +1,27 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { PropsWithChildren } from "react";
-import Layout from "../Layout";
+import Layout, { NavItem } from "../Layout";
 
 export const canonical = "https://tomat.dev";
+
+export const navItems = [
+    {
+        href: "/",
+        text: "Home",
+        external: false
+    },
+    {
+        href: "/about",
+        text: "About",
+        external: false
+    },
+    {
+        href: "/blog",
+        text: "Blog",
+        external: false
+    }
+];
 
 export type ContainerProps = PropsWithChildren<{
     title: string;
@@ -27,7 +45,7 @@ export default function Container(props: ContainerProps) {
                 <OgMeta {...meta} url={router.asPath} />
                 <TwitterMeta {...meta} />
             </Head>
-            <Layout navItems={["home", "about", "blog"]}>{children}</Layout>
+            <Layout navItems={navItems}>{children}</Layout>
         </>
     );
 }
