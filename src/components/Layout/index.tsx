@@ -15,7 +15,7 @@ export default function Layout({ navItems, children }: LayoutProps) {
     const [active, setActive] = useState(false);
 
     return (
-        <div className="h-full w-full max-w-[800px] mx-auto">
+        <div className="h-full w-full max-w-[640px] mx-auto">
             <div className="grid grid-rows-[auto_1fr] h-full p-[min(5vw,24px)] gap-6">
                 <NavBar active={active} setActive={setActive} navItems={navItems} />
                 <div className="relative">
@@ -86,7 +86,7 @@ function NavLinks({ navItems }: NavLinksProps) {
 
 export type HamBorgeProps = {
     onClick: any;
-    active?: boolean;
+    active: boolean;
 };
 
 function HamBorge({ onClick, active }: HamBorgeProps) {

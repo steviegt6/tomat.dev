@@ -7,7 +7,7 @@ module.exports = {
                 "background": "#0c0c0c"
             },
             screens: {
-                "navBreak": "800px"
+                "navBreak": "640px"
             }
         }
     },

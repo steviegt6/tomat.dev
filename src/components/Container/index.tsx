@@ -45,7 +45,9 @@ export default function Container(props: ContainerProps) {
                 <OgMeta {...meta} url={router.asPath} />
                 <TwitterMeta {...meta} />
             </Head>
-            <Layout navItems={navItems}>{children}</Layout>
+            <Layout navItems={navItems}>
+                <main className="flex flex-col md:flex-row mt-8 mx-4 sm:mx-auto">{children}</main>
+            </Layout>
         </>
     );
 }
