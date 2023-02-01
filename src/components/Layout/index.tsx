@@ -34,7 +34,7 @@ export default function Layout({ children }: LayoutProps) {
 export type NavBarProps = {
     active?: boolean;
     setActive: any;
-    navItems: [];
+    navItems: string[];
 };
 
 function NavBar({ active, setActive, navItems }: NavBarProps) {
@@ -54,7 +54,7 @@ function NavBar({ active, setActive, navItems }: NavBarProps) {
 }
 
 export type NavLinksProps = {
-    navItems: [];
+    navItems: string[];
 };
 
 function NavLinks({ navItems }: NavLinksProps) {
