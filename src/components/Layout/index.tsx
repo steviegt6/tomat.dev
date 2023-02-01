@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export default function Layout({ children }) {
+export type LayoutProps = {
+    children?: JSX.Element;
+};
+
+export default function Layout({ children }: LayoutProps) {
 
     const [active, setActive] = useState(false);
     const navItems = ["home", "about", "blog", "teen pregnancy"];
@@ -27,7 +31,13 @@ export default function Layout({ children }) {
     );
 }
 
-function NavBar({ active, setActive, navItems }) {
+export type NavBarProps = {
+    active?: boolean;
+    setActive: any;
+    navItems: [];
+};
+
+function NavBar({ active, setActive, navItems }: NavBarProps) {
 
     return (
         <nav>
@@ -43,7 +53,11 @@ function NavBar({ active, setActive, navItems }) {
     );
 }
 
-function NavLinks({ navItems }) {
+export type NavLinksProps = {
+    navItems: [];
+};
+
+function NavLinks({ navItems }: NavLinksProps) {
     return (
         <>
             { navItems.map((navItem: string, i: number) => <Link key={i} className="capitalize px-2 py-1 hover:bg-neutral-800 rounded-md inline-block" href={`/${navItem}`}>{navItem}</Link>) }
@@ -51,7 +65,12 @@ function NavLinks({ navItems }) {
     );
 }
 
-function HamBorge({ onClick, active }) {
+export type HamBorgeProps = {
+    onClick: any;
+    active?: boolean;
+};
+
+function HamBorge({ onClick, active }: HamBorgeProps) {
     return (
         <button className="flex navBreak:hidden transition-transform active:scale-75" onClick={onClick}>
             { active ? (
