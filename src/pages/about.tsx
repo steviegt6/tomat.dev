@@ -27,8 +27,8 @@ export default function About() {
             </p>
             <br />
             <p>
-                Whether willingly or not, I've become familiar with the overarching <strong>.NET Ecosystem</strong>,{" "}
-                <strong>MSBuild</strong>, <strong>Node.js</strong>, and more.
+                Whether willingly or not, I&apos;ve become familiar with the overarching <strong>.NET Ecosystem</strong>
+                , <strong>MSBuild</strong>, <strong>Node.js</strong>, and more.
             </p>
         </Container>
     );
