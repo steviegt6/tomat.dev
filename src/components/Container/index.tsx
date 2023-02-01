@@ -9,17 +9,20 @@ export const navItems = [
     {
         href: "/",
         text: "Home",
-        external: false
+        external: false,
+        active: true
     },
     {
         href: "/about",
         text: "About",
-        external: false
+        external: false,
+        active: true
     },
     {
         href: "/blog",
         text: "Blog",
-        external: false
+        external: false,
+        active: false
     }
 ];
 

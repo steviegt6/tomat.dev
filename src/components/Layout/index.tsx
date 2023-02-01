@@ -5,6 +5,7 @@ export type NavItem = {
     href: string;
     text: string;
     external: boolean;
+    active: boolean;
 };
 
 export type LayoutProps = React.PropsWithChildren<{
@@ -61,25 +62,19 @@ export type NavLinksProps = {
 function NavLinks({ navItems }: NavLinksProps) {
     return (
         <>
-            {navItems.map((navItem) =>
-                navItem.external ? (
-                    <a
-                        key={navItem.text}
-                        className="capitalize px-2 py-1 hover:bg-neutral-800 rounded-md inline-block"
-                        href={navItem.href}
-                    >
-                        {navItem.text}
-                    </a>
+            {navItems.map((navItem) => {
+                const extra = navItem.active ? "hover:bg-neutral-800 text-highlight" : "text-lowlight";
+                const props = {
+                    key: navItem.text,
+                    className: "px-2 py-1 rounded-md inline-block " + extra,
+                    href: navItem.href
+                };
+                return navItem.external || !navItem.active ? (
+                    <a {...props}>{navItem.text}</a>
                 ) : (
-                    <Link
-                        key={navItem.text}
-                        className="capitalize px-2 py-1 hover:bg-neutral-800 rounded-md inline-block"
-                        href={navItem.href}
-                    >
-                        {navItem.text}
-                    </Link>
-                )
-            )}
+                    <Link {...props}>{navItem.text}</Link>
+                );
+            })}
         </>
     );
 }
