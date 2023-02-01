@@ -1,10 +1,10 @@
-import Link from "next/link"
-import { useState } from "react"
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Layout({ children }) {
 
     const [active, setActive] = useState(false);
-    const navItems = ["home", "about", "blog", "teen pregnancy"]
+    const navItems = ["home", "about", "blog", "teen pregnancy"];
 
     {/* if you dont want this goofy ass prop drilling then use a state lib or react context but idk how it works */}
 
@@ -24,7 +24,7 @@ export default function Layout({ children }) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 function NavBar({ active, setActive, navItems }) {
@@ -40,15 +40,15 @@ function NavBar({ active, setActive, navItems }) {
                 <HamBorge onClick={() => setActive(!active)} active={active} />
             </div>
         </nav>
-    )
+    );
 }
 
 function NavLinks({ navItems }) {
     return (
         <>
-            { navItems.map((navItem: string) => <Link className="capitalize px-2 py-1 hover:bg-neutral-800 rounded-md inline-block" href={`/${navItem}`}>{navItem}</Link>) }
+            { navItems.map((navItem: string, i: number) => <Link key={i} className="capitalize px-2 py-1 hover:bg-neutral-800 rounded-md inline-block" href={`/${navItem}`}>{navItem}</Link>) }
         </>
-    )
+    );
 }
 
 function HamBorge({ onClick, active }) {
@@ -67,5 +67,5 @@ function HamBorge({ onClick, active }) {
                 </svg>
             ) }
         </button>
-    )
+    );
 }
