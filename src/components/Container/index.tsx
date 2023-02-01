@@ -7,19 +7,22 @@ export const canonical = "https://tomat.dev";
 
 export const navItems = [
     {
-        href: "/",
+        href: "/?shallow=true",
         text: "Home",
-        external: false
+        external: false,
+        active: true
     },
     {
         href: "/about",
         text: "About",
-        external: false
+        external: false,
+        active: true
     },
     {
         href: "/blog",
         text: "Blog",
-        external: false
+        external: false,
+        active: false
     }
 ];
 
@@ -45,7 +48,9 @@ export default function Container(props: ContainerProps) {
                 <OgMeta {...meta} url={router.asPath} />
                 <TwitterMeta {...meta} />
             </Head>
-            <Layout navItems={navItems}>{children}</Layout>
+            <Layout navItems={navItems}>
+                <main className="md:flex-row mt-8 mx-4 sm:mx-auto">{children}</main>
+            </Layout>
         </>
     );
 }

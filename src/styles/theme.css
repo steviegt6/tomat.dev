@@ -10,4 +10,8 @@
 
     /* General color for text, should contrast heavily with the background. */
     --foreground-color: #cccccc; /*#eeeeee;*/
+    --highlight-color: #e4e4e4;
+    --lowlight-color: #555555;
+
+    --link-color: #82aaff;
 }

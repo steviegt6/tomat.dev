@@ -4,10 +4,13 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                "background": "#0c0c0c"
+                "background": "var(--background-color)",
+                "foreground": "var(--foreground-color)",
+                "highlight": "var(--highlight-color)",
+                "lowlight": "var(--lowlight-color)"
             },
             screens: {
-                "navBreak": "800px"
+                "navBreak": "640px"
             }
         }
     },

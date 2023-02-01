@@ -6,6 +6,7 @@ import { clamp } from "lib/math";
 import { transform, waitAndTransform } from "lib/transforms/transform";
 import OpaqueFilter from "lib/filters/opaqueFilter";
 import SilentErrorBoundary from "../SilentErrorBoundary";
+import { useRouter } from "next/router";
 
 export type TomatLogoProps = {
     width: number;
@@ -39,6 +40,7 @@ export default function TomatLogo({
     clickable = false,
     children = <></>
 }: TomatLogoProps) {
+    const router = useRouter();
     const [displayChildren, setDisplayChildren] = useState(false);
     const [state, setState] = useState(DisplayState.Idle);
     const [stageSize, setStageSize] = useState<[number, number]>(() => {
@@ -67,6 +69,12 @@ export default function TomatLogo({
 
         recalculate();
     }, [setStageSize, clickable]);
+
+    useEffect(() => {
+        if (!router.query.shallow) return;
+        setDisplayChildren(true);
+        setState(DisplayState.Hidden);
+    }, [setDisplayChildren, setState, router]);
 
     return (
         <>
