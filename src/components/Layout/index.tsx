@@ -14,12 +14,12 @@ export default function Layout({ children }: LayoutProps) {
 
     return (
         <div className="h-full w-full max-w-[800px] mx-auto">
-            <div className="grid grid-rows-[auto_1fr] h-full p-[min(5vw,24px)]">
+            <div className="grid grid-rows-[auto_1fr] h-full p-[min(5vw,24px)] gap-6">
                 <NavBar active={active} setActive={setActive} navItems={navItems}/>
                 <div className="relative">
                     { active && (
                         <div className="absolute inset-0 bg-background -ml-2 block navBreak:hidden">
-                            <div className="flex flex-col gap-2 mt-6">
+                            <div className="flex flex-col gap-2">
                                 <NavLinks navItems={navItems} />
                             </div>
                         </div>
