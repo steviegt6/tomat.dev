@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { PropsWithChildren } from "react";
+import Layout from "../Layout";
 
 export const canonical = "https://tomat.dev";
 
@@ -26,7 +27,7 @@ export default function Container(props: ContainerProps) {
                 <OgMeta {...meta} url={router.asPath} />
                 <TwitterMeta {...meta} />
             </Head>
-            {children}
+            <Layout navItems={["home", "about", "blog"]}>{children}</Layout>
         </>
     );
 }
