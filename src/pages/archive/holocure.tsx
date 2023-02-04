@@ -230,7 +230,10 @@ function Archive({ archive, filter }: ArchiveProps) {
                     default:
                         if (!propertyFilters[filter]) break;
                         const propertyValue = propertyFilters[filter]();
-                        if (propertyValue === undefined) break;
+                        if (propertyValue === undefined) {
+                            hidden = hidden || !negate;
+                            break;
+                        }
                         const matches = propertyValue.toString().includes(value);
                         hidden = hidden || (negate ? matches : !matches);
                         break;
