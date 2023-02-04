@@ -12,7 +12,6 @@ type ArchiveProps = {
 type LoadStatus = "loading" | "loaded" | "error";
 
 type CompiledVersion = {
-    buildId?: string | undefined;
     timestampUnix: number | undefined;
     timestampMilliseconds: number | undefined;
     itchData?: ItchData | undefined;
@@ -20,6 +19,7 @@ type CompiledVersion = {
 };
 
 type ItchData = {
+    buildId?: string | undefined;
     itchDate: string;
     itchUrl: string;
 };
@@ -67,7 +67,7 @@ function CompiledArchives({}: CompiledArchivesProps) {
 
     useEffect(() => {
         // TODO: make this not suck?
-        const json = fetch(archivesUrl)
+        const json = fetch(archivesUrl, { cache: "no-store" })
             .then((response) => {
                 if (response.body) return response.json();
 
@@ -117,13 +117,6 @@ function Archive({ archive }: ArchiveProps) {
     return (
         <div className="mt-2 mb-2 p-2 rounded bg-middleground">
             <p>[{archive.tags.join(", ")}]</p>
-            {archive.buildId ? (
-                <p>
-                    <strong>itch build id</strong>: {archive.buildId}
-                </p>
-            ) : (
-                <></>
-            )}
             {archive.timestampMilliseconds && archive.timestampUnix ? (
                 <>
                     <p>
@@ -138,6 +131,9 @@ function Archive({ archive }: ArchiveProps) {
             )}
             {archive.itchData ? (
                 <>
+                    <p>
+                        <strong>itch build id</strong>: {archive.itchData.buildId}
+                    </p>
                     <p>
                         <strong>itch date:</strong> {archive.itchData.itchDate}
                     </p>
