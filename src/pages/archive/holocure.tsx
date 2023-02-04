@@ -12,14 +12,18 @@ type ArchiveProps = {
 type LoadStatus = "loading" | "loaded" | "error";
 
 type CompiledVersion = {
-    timestampUnix: number | undefined;
-    timestampMilliseconds: number | undefined;
+    archiveData?: ArchiveData | undefined;
     itchData?: ItchData | undefined;
     tags: SourceTag[];
 };
 
+type ArchiveData = {
+    timestampUnix: number;
+    timestampMilliseconds: number;
+};
+
 type ItchData = {
-    buildId?: string | undefined;
+    buildId: string;
     itchDate: string;
     itchUrl: string;
 };
@@ -116,14 +120,15 @@ function CompiledArchives({}: CompiledArchivesProps) {
 function Archive({ archive }: ArchiveProps) {
     return (
         <div className="mt-2 mb-2 p-2 rounded bg-middleground">
+            {" "}
             <p>[{archive.tags.join(", ")}]</p>
-            {archive.timestampMilliseconds && archive.timestampUnix ? (
+            {archive.archiveData ? (
                 <>
                     <p>
-                        <strong>timestamp (unix):</strong> {archive.timestampUnix}
+                        <strong>timestamp (unix):</strong> {archive.archiveData.timestampUnix}
                     </p>
                     <p>
-                        <strong>timestamp (milliseconds):</strong> {archive.timestampUnix}
+                        <strong>timestamp (milliseconds):</strong> {archive.archiveData.timestampUnix}
                     </p>
                 </>
             ) : (
