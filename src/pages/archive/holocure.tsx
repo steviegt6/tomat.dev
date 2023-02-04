@@ -81,8 +81,8 @@ function CompiledArchives({}: CompiledArchivesProps) {
 
         if (json) {
             json.then((data) => {
-                const archives = data.map((archive: CompiledVersion) => (
-                    <Archive key={archive.buildId} archive={archive} />
+                const archives = data.map((archive: CompiledVersion, i: number) => (
+                    <Archive key={i} archive={archive} />
                 ));
 
                 setArchives(archives);
@@ -116,9 +116,14 @@ function CompiledArchives({}: CompiledArchivesProps) {
 function Archive({ archive }: ArchiveProps) {
     return (
         <div className="mt-2 mb-2 p-2 rounded bg-middleground">
-            <p>
-                <strong>build id</strong>: {archive.buildId} [{archive.tags.join(", ")}]
-            </p>
+            <p>[{archive.tags.join(", ")}]</p>
+            {archive.buildId ? (
+                <p>
+                    <strong>itch build id</strong>: {archive.buildId}
+                </p>
+            ) : (
+                <></>
+            )}
             {archive.timestampMilliseconds && archive.timestampUnix ? (
                 <>
                     <p>
