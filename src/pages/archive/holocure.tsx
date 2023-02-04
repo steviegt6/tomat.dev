@@ -20,6 +20,7 @@ type CompiledVersion = {
 type ArchiveData = {
     timestampUnix: number;
     timestampMilliseconds: number;
+    archiveName: string;
 };
 
 type ItchData = {
@@ -36,6 +37,7 @@ const description = "HoloCure archival project.";
 const repoName = "steviegt6/holocure-archive";
 const repoUrl = `https://github.com/${repoName}`;
 const archivesUrl = `https://raw.githubusercontent.com/${repoName}/master/sources/compiled.json`;
+const archiveDownloadUrl = "https://github.com/steviegt6/holocure-archive/raw/master/archive/";
 const holocureLink = "https://kay-yu.itch.io/holocure";
 const discordLink = "https://discord.gg/KvqKGQNbhr";
 
@@ -124,6 +126,10 @@ function Archive({ archive }: ArchiveProps) {
             <p>[{archive.tags.join(", ")}]</p>
             {archive.archiveData ? (
                 <>
+                    <p>
+                        <strong>archive:</strong>{" "}
+                        <a href={`${archiveDownloadUrl}${archive.archiveData.archiveName}`}>download</a>
+                    </p>
                     <p>
                         <strong>timestamp (unix):</strong> {archive.archiveData.timestampUnix}
                     </p>
