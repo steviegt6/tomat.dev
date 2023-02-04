@@ -127,8 +127,8 @@ function Archive({ archive }: ArchiveProps) {
             {archive.archiveData ? (
                 <>
                     <p>
-                        <strong>archive:</strong>{" "}
-                        <a href={`${archiveDownloadUrl}${archive.archiveData.archiveName}`}>download</a>
+                        <strong>archive:</strong> {archive.archiveData.archiveName} (
+                        <a href={`${archiveDownloadUrl}${archive.archiveData.archiveName}`}>download</a>)
                     </p>
                     <p>
                         <strong>timestamp (unix):</strong> {archive.archiveData.timestampUnix}
