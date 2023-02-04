@@ -5,6 +5,7 @@ module.exports = {
         extend: {
             colors: {
                 "background": "var(--background-color)",
+                "middleground": "var(--middleground-color)",
                 "foreground": "var(--foreground-color)",
                 "highlight": "var(--highlight-color)",
                 "lowlight": "var(--lowlight-color)"

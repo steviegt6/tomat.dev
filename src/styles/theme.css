@@ -7,6 +7,7 @@
 :root {
     /* Background color. */
     --background-color: #0c0c0c; /*#080808;*/
+    --middleground-color: #1c1c1c;
 
     /* General color for text, should contrast heavily with the background. */
     --foreground-color: #cccccc; /*#eeeeee;*/
