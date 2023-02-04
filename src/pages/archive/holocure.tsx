@@ -115,7 +115,7 @@ function CompiledArchives({}: CompiledArchivesProps) {
 
 function Archive({ archive }: ArchiveProps) {
     return (
-        <div className="mt-2 mb-2 p-2 rounded bg-lowlight">
+        <div className="mt-2 mb-2 p-2 rounded bg-middleground">
             <p>
                 <strong>build id</strong>: {archive.buildId} [{archive.tags.join(", ")}]
             </p>
