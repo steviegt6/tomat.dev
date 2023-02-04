@@ -3,10 +3,15 @@ import { ReactElement, useEffect, useState } from "react";
 
 export type HoloCureProps = {};
 
-type CompiledArchivesProps = {};
+type SearchWrapperProps = {};
+
+type CompiledArchivesProps = {
+    filter: string;
+};
 
 type ArchiveProps = {
     archive: CompiledVersion;
+    filter: string;
 };
 
 type LoadStatus = "loading" | "loaded" | "error";
@@ -42,6 +47,8 @@ const holocureLink = "https://kay-yu.itch.io/holocure";
 const discordLink = "https://discord.gg/KvqKGQNbhr";
 
 export default function HoloCure({}: HoloCureProps) {
+    const [filter, setFilter] = useState<string>("");
+
     return (
         <Container title={title} description={description}>
             <h1>HoloCure Archive</h1>
@@ -61,17 +68,29 @@ export default function HoloCure({}: HoloCureProps) {
             <br />
             <h2>Compiled Archives</h2>
             <hr />
-            <CompiledArchives />
+            <input
+                type="text"
+                id="archive_search"
+                placeholder="Filter archives..."
+                className="mt-2 mb-2 p-2 rounded bg-middleground w-full"
+                onChange={(event) => {
+                    setFilter(event.target.value);
+                }}
+            />
+            <hr />
+            <CompiledArchives filter={filter} />
         </Container>
     );
 }
 
-function CompiledArchives({}: CompiledArchivesProps) {
+function CompiledArchives({ filter }: CompiledArchivesProps) {
     const [status, setStatus] = useState<LoadStatus>("loading");
     const [archives, setArchives] = useState<ReactElement>();
+    const [filteredArchives, setFilteredArchives] = useState<boolean[]>();
     const [error, setError] = useState<Error | null>(null);
 
     useEffect(() => {
+        console.log("ew");
         // TODO: make this not suck?
         const json = fetch(archivesUrl, { cache: "no-store" })
             .then((response) => {
@@ -87,9 +106,9 @@ function CompiledArchives({}: CompiledArchivesProps) {
 
         if (json) {
             json.then((data) => {
-                const archives = data.map((archive: CompiledVersion, i: number) => (
-                    <Archive key={i} archive={archive} />
-                ));
+                const archives = data.map((archive: CompiledVersion, i: number) => {
+                    return <Archive key={i} archive={archive} filter={filter} />;
+                });
 
                 setArchives(archives);
                 setStatus("loaded");
@@ -98,7 +117,7 @@ function CompiledArchives({}: CompiledArchivesProps) {
                 setError(error);
             });
         }
-    }, [setStatus, setArchives, setError]);
+    }, [setStatus, setArchives, setError, filter]);
 
     switch (status) {
         case "loading":
@@ -119,9 +138,22 @@ function CompiledArchives({}: CompiledArchivesProps) {
     }
 }
 
-function Archive({ archive }: ArchiveProps) {
+function SearchWrapper({}: SearchWrapperProps) {}
+
+function Archive({ archive, filter }: ArchiveProps) {
+    const [hidden, setHidden] = useState<boolean>(false);
+
+    useEffect(() => {
+        if (filter.length > 0) {
+            const tags = archive.tags.join(" ");
+            setHidden(!tags.includes(filter));
+        } else {
+            setHidden(false);
+        }
+    }, [setHidden, archive, filter]);
+
     return (
-        <div className="mt-2 mb-2 p-2 rounded bg-middleground">
+        <div className={`mt-2 mb-2 p-2 rounded bg-middleground ${hidden ? "hidden" : ""}`}>
             {" "}
             <p>[{archive.tags.join(", ")}]</p>
             {archive.archiveData ? (
