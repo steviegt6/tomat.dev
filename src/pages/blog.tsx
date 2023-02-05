@@ -6,7 +6,7 @@ import Link from "next/link";
 export type BlogProps = {};
 
 const title = "/blog";
-const description = "read the rambligns of the mentally deranged";
+const description = "read the ramblings of the mentally deranged";
 
 export default function Blog({}: BlogProps) {
     return (
