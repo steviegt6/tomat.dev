@@ -14,7 +14,7 @@ export default function Blog({}: BlogProps) {
             <h1>Blog</h1>
             <hr />
             <br />
-            <p>Temp.</p>
+            <p>Observe the schizophrenic ramblings of the mentally deranged.</p>
             <br />
             {allBlogs
                 .sort((a, b) => {
