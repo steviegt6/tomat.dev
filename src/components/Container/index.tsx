@@ -23,6 +23,12 @@ export const navItems = [
         text: "Blog",
         external: false,
         active: false
+    },
+    {
+        href: "/archive",
+        text: "Archive",
+        external: false,
+        active: true
     }
 ];
 
