@@ -48,7 +48,6 @@ export default function BlogPage({ slug }: BlogPageProps) {
                 data-input-position="bottom"
                 data-theme="transparent_dark"
                 data-lang="en"
-                data-loading="lazy"
                 crossOrigin="anonymous"
                 async
             />
