@@ -10,7 +10,13 @@ const nextConfig = {
                 pathname: "/comics/*"
             }
         ]
-    }
+    },
+    rewrites: async () => [
+        {
+            source: "/mirror/cumcord/an-exercise-in-futility",
+            destination: "/mirror/cumcord/an-exercise-in-futility.html"
+        }
+    ]
 };
 
 module.exports = nextConfig;

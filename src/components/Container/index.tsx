@@ -29,6 +29,12 @@ export const navItems = [
         text: "Archive",
         external: false,
         active: true
+    },
+    {
+        href: "/mirror",
+        text: "My Mirrors",
+        external: false,
+        active: true
     }
 ];
 

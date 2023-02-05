@@ -172,7 +172,7 @@ export default function Futility({}: FutilityProps) {
                 - the <a href="https://cumcord.com/an-exercise-in-futility">original page</a>,
             </p>
             <p>
-                - a <Link href="/mirror/cumcord/futility">direct mirror on my site</Link>.
+                - a <Link href="/mirror/cumcord/an-exercise-in-futility">direct mirror on my site</Link>.
             </p>
         </Container>
     );
