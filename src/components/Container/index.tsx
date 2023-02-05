@@ -55,7 +55,7 @@ export default function Container(props: ContainerProps) {
                 <TwitterMeta {...meta} />
             </Head>
             <Layout navItems={navItems}>
-                <main className="md:flex-row mt-8 mx-4 sm:mx-auto">{children}</main>
+                <main className="md:flex-row mt-8 mx-auto">{children}</main>
             </Layout>
         </>
     );
