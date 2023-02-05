@@ -17,7 +17,7 @@ async function fetcher<JSON>(input: RequestInfo, init?: RequestInit): Promise<JS
 }
 
 export default function ViewCounter({ slug, track }: ViewCounterProps) {
-    if (slug.startsWith("blog/")) slug = slug.replace("blog/", "");
+    slug = slug.replace("/", ",");
     const { data } = useSWR<PostView[]>("/api/views", fetcher);
     const viewsForSlug = data && data.find((view) => view.slug === slug);
     const views = viewsForSlug?.count || 0;

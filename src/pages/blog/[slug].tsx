@@ -26,7 +26,7 @@ export default function BlogPage({ slug }: BlogPageProps) {
                 </em>{" "}
                 - <ViewCounter slug={blog.slug} track /> views
             </p>
-            <h1>{slug}</h1>
+            <h1>{blog.title}</h1>
             <hr />
             <br />
             <Mdx code={blog.body.code} />
