@@ -22,7 +22,7 @@ export default function Blog({}: BlogProps) {
                     return 1;
                 })
                 .map((post) => (
-                    <Link key={post.slug} href={`/blog/${post.slug}`}>
+                    <Link key={post.slug} href={`${post.slug}`}>
                         <div className="mt-2 mb-2 p-2 rounded bg-middleground text-foreground">
                             <p>
                                 <strong>{post.title}</strong>
