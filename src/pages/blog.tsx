@@ -21,25 +21,25 @@ export default function Blog({}: BlogProps) {
                     if (new Date(a.date) > new Date(b.date)) return -1;
                     return 1;
                 })
-                .map((post) => (
-                    <Link key={post.slug} href={`${post.slug}`}>
+                .map((blog) => (
+                    <Link key={blog.slug} href={`${blog.slug}`}>
                         <div className="mt-2 mb-2 p-2 rounded bg-middleground text-foreground">
                             <p>
-                                <strong>{post.title}</strong>
+                                <strong>{blog.title}</strong>
                             </p>
                             <p>
                                 <em>
-                                    {new Date(post.date).toLocaleDateString("en-US", {
+                                    {new Date(blog.date).toLocaleDateString("en-US", {
                                         weekday: "long",
                                         year: "numeric",
                                         month: "long",
                                         day: "numeric"
                                     })}
                                 </em>{" "}
-                                - <ViewCounter slug={post.slug} /> views
+                                - <ViewCounter slug={blog.slug} track={false} /> views
                             </p>
                             <br />
-                            <p>{post.summary}</p>
+                            <p>{blog.summary}</p>
                         </div>
                     </Link>
                 ))}

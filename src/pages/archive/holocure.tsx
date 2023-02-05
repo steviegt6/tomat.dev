@@ -89,7 +89,6 @@ function CompiledArchives({ filter }: CompiledArchivesProps) {
     const [error, setError] = useState<Error | null>(null);
 
     useEffect(() => {
-        console.log("ew");
         // TODO: make this not suck?
         const json = fetch(archivesUrl, { cache: "no-store" })
             .then((response) => {
@@ -221,7 +220,6 @@ function Archive({ archive, filter }: ArchiveProps) {
                         break;
 
                     case "has_tag":
-                        console.log("has_tag", negate, value, archive.tags);
                         const hasTag = archive.tags.includes(value as SourceTag);
                         hidden = hidden || (negate ? hasTag : !hasTag);
                         break;
