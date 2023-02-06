@@ -3,6 +3,11 @@ import { queryBuilder } from "lib/planetscale";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    if (!env.DATABASE_URL)
+        return res.status(200).json({
+            total: -1
+        });
+
     try {
         const slug = req.query.slug!.toString();
         let data = await queryBuilder.selectFrom("views").where("slug", "=", slug).select(["count"]).execute();
