@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import { millisecondsToTime as msFormat, timeFromItchDate } from "lib/dates";
 import { ReactElement, useEffect, useState } from "react";
 
 export type HoloCureProps = {};
@@ -12,6 +13,10 @@ type CompiledArchivesProps = {
 type ArchiveProps = {
     archive: CompiledVersion;
     filter: string;
+};
+
+type MiscTextProps = {
+    archive: CompiledVersion;
 };
 
 type LoadStatus = "loading" | "loaded" | "error";
@@ -247,7 +252,7 @@ function Archive({ archive, filter }: ArchiveProps) {
     return (
         <div className={`mt-2 mb-2 p-2 rounded bg-middleground ${hidden ? "hidden" : ""}`}>
             {" "}
-            <p>[{archive.tags.join(", ")}]</p>
+            <MiscText archive={archive} />
             {archive.archiveData ? (
                 <>
                     <p>
@@ -258,7 +263,7 @@ function Archive({ archive, filter }: ArchiveProps) {
                         <strong>timestamp (unix):</strong> {archive.archiveData.timestampUnix}
                     </p>
                     <p>
-                        <strong>timestamp (milliseconds):</strong> {archive.archiveData.timestampUnix}
+                        <strong>timestamp (milliseconds):</strong> {archive.archiveData.timestampMilliseconds}
                     </p>
                 </>
             ) : (
@@ -280,5 +285,21 @@ function Archive({ archive, filter }: ArchiveProps) {
                 <></>
             )}
         </div>
+    );
+}
+
+function MiscText({ archive }: MiscTextProps) {
+    const tags = <>[{archive.tags.join(", ")}]</>;
+
+    if (!archive.archiveData || !archive.itchData) return <p>{tags}</p>;
+
+    let timeDifference = archive.archiveData?.timestampMilliseconds - timeFromItchDate(archive.itchData?.itchDate);
+    const sign = timeDifference > 0 ? "+" : "-";
+    const formatted = msFormat(Math.abs(timeDifference));
+
+    return (
+        <p>
+            {tags} [{`${sign}${formatted}`}]
+        </p>
     );
 }
