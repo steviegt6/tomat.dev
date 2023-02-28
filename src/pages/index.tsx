@@ -18,7 +18,7 @@ export default function Home() {
                     - my <a href="https://github.com/steviegt6/">GitHub</a>,
                     <br />- my <a href="https://discordapp.com/users/269903979582849024">Discord</a> (Tomat#0001),
                     <br />- my <a href="https://youtube.com/c/tomatophile/">YouTube</a>,
-                    <br />- my <a href="https://twitter.com/steviegt6">Twitter</a>.
+                    <br />- my <a href="https://twitter.com/tomatdev">Twitter</a>.
                 </p>
             </Container>
         </LogoContainer>
