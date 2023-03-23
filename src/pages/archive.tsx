@@ -26,11 +26,6 @@ export default function Archive({}: ArchiveProps) {
                 &nbsp; - provides a frontend for{" "}
                 <a href="https://github.com/steviegt6/holocure-archive">steviegt6/holocure-archive</a>
             </p>
-            <p>
-                <Link href="/archive/cumcord/futility">/archive/cumcord/futility</Link>
-                <br />
-                &nbsp; - an exercise in futility
-            </p>
         </Container>
     );
 }
