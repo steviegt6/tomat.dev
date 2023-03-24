@@ -18,7 +18,12 @@ export default function Mirror({}: MirrorProps) {
             <hr />
             <br />
             <p>
-                <Link href="/mirror/cumcord/an-exercise-in-futility">/mirror/cumcord/an-exercise-in-futility</Link>
+                <Link href="/undertale">/undertale</Link>
+                <br />
+                &nbsp; - modified mirror of undertale.rawr.ws
+            </p>
+            <p>
+                <Link href="/cumcord/an-exercise-in-futility">/cumcord/an-exercise-in-futility</Link>
                 <br />
                 &nbsp; - an exercise in futility
             </p>

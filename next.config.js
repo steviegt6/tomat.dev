@@ -1,5 +1,23 @@
 const { withContentlayer } = require("next-contentlayer");
 
+const undertalePages = [
+    "battles",
+    "calls",
+    "debugmode",
+    "decompilation-corrected",
+    "decompilation",
+    "endings",
+    "flags",
+    "fun",
+    // "index",
+    "items",
+    "monsters",
+    "rooms",
+    "save",
+    "unpacking-corrected",
+    "unpacking"
+];
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: false,
@@ -15,9 +33,17 @@ const nextConfig = {
     },
     rewrites: async () => [
         {
-            source: "/mirror/cumcord/an-exercise-in-futility",
-            destination: "/mirror/cumcord/an-exercise-in-futility.html"
-        }
+            source: "/cumcord/an-exercise-in-futility",
+            destination: "/cumcord/an-exercise-in-futility.html"
+        },
+        {
+            source: "/undertale",
+            destination: "/undertale/index.html"
+        },
+        ...undertalePages.map((page) => ({
+            source: `/undertale/${page}`,
+            destination: `/undertale/${page}.html`
+        }))
     ]
 };
 

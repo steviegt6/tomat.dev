@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Fun events</title>
+    <link href="/undertale/css/common.css" rel="stylesheet"/>
+    
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="/undertale">Index</a></li>
+        <li><a href="/undertale/rooms">Rooms</a></li>
+        <li><a href="/undertale/flags">Flags</a> </li>
+        <li><a href="/undertale/battles">Battles</a> </li>
+        <li><a href="/undertale/save">Save structure</a> </li>
+        <li><a href="/undertale/monsters">Monsters</a> </li>
+        <li><a href="/undertale/items">Items</a> </li>
+        <li><a href="/undertale/calls">Papyrus &amp; Undyne calls</a> </li>
+        <li><a href="/undertale/fun">Fun events</a> </li>
+        <li><a href="/undertale/debugmode">Debug mode</a> </li>
+        <li><a href="/undertale/unpacking">Unpacking (original)</a> </li>
+        <li><a href="/undertale/unpacking-corrected">Unpacking (w/ corrections)</a> </li>
+        <li><a href="/undertale/decompilation">Decompilation (original)</a> </li>
+        <li><a href="/undertale/decompilation-corrected">Decompilation (w/ corrections)</a> </li>
+        <li><del title="I don't want to get in trouble for providing this, decompile the game yourself!">Sound effects</del></li>
+        <li><a href="/undertale/sprites.zip" title="Legal: https://www.reddit.com/r/Underminers/comments/3xhtne/important_just_got_this_email_from_toby_about/">Sprites</a></li>
+        <li><del title="I don't want to get in trouble for providing this, decompile the game yourself!">Strings</del></li>
+        <li><a href="/undertale/endings.pdf">Endings map</a></li>
+        <li><a href="https://youtube.com/c/mirrawrs"><img src="/undertale/img/YouTube-social-icon_dark_24px.png"/></a></li>
+    </ul>
+</nav>
+
+
+
+    <p>
+        Flag[5] is chosen in range 1..100 upon starting a new run. It is afterwards written to the 'fun' variable in the
+        undertale.ini file.
+    </p>
+    <table>
+        <tbody>
+            <tr>
+                <th>Requirements</th>
+                <th>Results</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>Fun: 65</li>
+                        <li>Flag[5]: 65</li>
+                        <li>Chance: .5</li>
+                    </ul>
+                </td>
+                <td>
+                    room_tundra3A (47) will send to room_soundtest (270). Fun and flag[5] will be set to 0.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>Fun: 56</li>
+                        <li>Flag[5]: 56</li>
+                    </ul>
+                </td>
+                <td>
+                    The crossword puzzle in room_tundra9 (55) will be in "nightmare mode".
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>Fun: 66</li>
+                        <li>Flag[5]: 66</li>
+                    </ul>
+                </td>
+                <td>
+                    When moving to the room right of room_water_savepoint1 (94), you will end up in room_water_fakehallway
+                    (268). Fun and flag[5] will be set to 0. The room has a .1 chance of spawning the grey door to
+                    room_mysteryman (271).
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>Flag[5]: less than 80 or greater than 89</li>
+                        <li>murderlv: less than 8</li>
+                    </ul>
+                </td>
+                <td>
+                    The NPC "clamgirl" will appear in room_water_friendlyhub (116).
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>Flag[5]: 61</li>
+                        <li>Fun: 61</li>
+                        <li>Flag[7]: 0 (the final fight must not have been completed)</li>
+                        <li>Chance: .2</li>
+                    </ul>
+                </td>
+                <td>
+                    The NPC "gaster_follower_a" will appear in room_fire_elevator_r1 (156). Fun and flag[5] will be set
+                    to 0.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>Flag[5]: 62</li>
+                        <li>Fun: 62</li>
+                        <li>Flag[7]: 0 (the final fight must not have been completed)</li>
+                        <li>Chance: .5</li>
+                        <li>murderlv: less than 12</li>
+                    </ul>
+                </td>
+                <td>
+                    The NPC "gaster_follower_b" will appear in room_fire_elevator_l3 (169). Fun and flag[5] will be set
+                    to 0.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>Flag[5]: 63</li>
+                        <li>Fun: 63</li>
+                        <li>Flag[7]: 0 (the final fight must not have been completed)</li>
+                        <li>Chance: .5</li>
+                        <li>murderlv: less than 12</li>
+                    </ul>
+                </td>
+                <td>
+                    The NPC "gaster_follower_c" will appear in room_fire_elevator_l2 (168). Fun and flag[5] will be set
+                    to 0.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>Flag[5]: greater than 90</li>
+                        <li>Fun: greater than 90</li>
+                        <li>Flag[7]: 1 (the final fight must have been completed)</li>
+                    </ul>
+                </td>
+                <td>
+                    The NPC "mkid_goner" will appear in room_water7 (91). Access it from room_water8 (92). Flag[5] will
+                    be set to 0 but the change won't be committed until you save.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>Flag[5]: in range 40..50</li>
+                        <li>Flag[7]: 0 (the final fight must not have been completed)</li>
+                        <li>Flag[277]: 0 (the call must not have occurred before)</li>
+                        <li>plot: less than 120</li>
+                    </ul>
+                </td>
+                <td>
+                    In range 40..45 the sans refrigerator phone call will occur. In range 46..50 the pizza phone call will
+                    occur.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>Flag[5]: in range 2..39</li>
+                        <li>Flag[7]: 0 (the final fight must not have been completed)</li>
+                        <li>Flag[277]: 0 (the call must not have occurred before)</li>
+                        <li>plot: less than 120</li>
+                    </ul>
+                </td>
+                <td>
+                    The wrong number song phone call will occur in room_tundra_dock (70).
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>

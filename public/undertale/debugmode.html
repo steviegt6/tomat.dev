@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Debug mode</title>
+    <link href="/undertale/css/common.css" rel="stylesheet"/>
+    
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="/undertale">Index</a></li>
+        <li><a href="/undertale/rooms">Rooms</a></li>
+        <li><a href="/undertale/flags">Flags</a> </li>
+        <li><a href="/undertale/battles">Battles</a> </li>
+        <li><a href="/undertale/save">Save structure</a> </li>
+        <li><a href="/undertale/monsters">Monsters</a> </li>
+        <li><a href="/undertale/items">Items</a> </li>
+        <li><a href="/undertale/calls">Papyrus &amp; Undyne calls</a> </li>
+        <li><a href="/undertale/fun">Fun events</a> </li>
+        <li><a href="/undertale/debugmode">Debug mode</a> </li>
+        <li><a href="/undertale/unpacking">Unpacking (original)</a> </li>
+        <li><a href="/undertale/unpacking-corrected">Unpacking (w/ corrections)</a> </li>
+        <li><a href="/undertale/decompilation">Decompilation (original)</a> </li>
+        <li><a href="/undertale/decompilation-corrected">Decompilation (w/ corrections)</a> </li>
+        <li><del title="I don't want to get in trouble for providing this, decompile the game yourself!">Sound effects</del></li>
+        <li><a href="/undertale/sprites.zip" title="Legal: https://www.reddit.com/r/Underminers/comments/3xhtne/important_just_got_this_email_from_toby_about/">Sprites</a></li>
+        <li><del title="I don't want to get in trouble for providing this, decompile the game yourself!">Strings</del></li>
+        <li><a href="/undertale/endings.pdf">Endings map</a></li>
+        <li><a href="https://youtube.com/c/mirrawrs"><img src="/undertale/img/YouTube-social-icon_dark_24px.png"/></a></li>
+    </ul>
+</nav>
+
+
+<p>Set 0x725B24 in data.win to 1. List of features:</p>
+<table>
+    <tbody>
+        <tr>
+            <th>Trigger</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td>By default</td>
+            <td>All "fun" events will occur regardless of other parameters</td>
+        </tr>
+        <tr>
+            <td>Page up</td>
+            <td>Increase "steps" by 100</td>
+        </tr>
+        <tr>
+            <td>Page down</td>
+            <td>Make attack equals to 999</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Increase battle group</td>
+        </tr>
+        <tr>
+            <td>Ins</td>
+            <td>Next room</td>
+        </tr>
+        <tr>
+            <td>Del</td>
+            <td>Previous room</td>
+        </tr>
+        <tr>
+            <td>S</td>
+            <td>Save</td>
+        </tr>
+        <tr>
+            <td>L</td>
+            <td>Load</td>
+        </tr>
+        <tr>
+            <td>0..4</td>
+            <td>Choose save file</td>
+        </tr>
+        <tr>
+            <td>F + 6</td>
+            <td>Go to room_fire2 (138)</td>
+        </tr>
+        <tr>
+            <td>W + 6</td>
+            <td>Go to room_water1 (82)</td>
+        </tr>
+        <tr>
+            <td>T + 6</td>
+            <td>Go to room_tundra1 (44)</td>
+        </tr>
+        <tr>
+            <td>E + 6</td>
+            <td>Go to room_castle_front (219)</td>
+        </tr>
+        <tr>
+            <td>R + 6</td>
+            <td>Go to room_ruins2 (7)</td>
+        </tr>
+        <tr>
+            <td>Y + 6</td>
+            <td>Go to room_truelab_elevator (244)</td>
+        </tr>
+        <tr>
+            <td>G</td>
+            <td>Box</td>
+        </tr>
+        <tr>
+            <td>G (in a shop)</td>
+            <td>Add 5000 gold</td>
+        </tr>
+        <tr>
+            <td>O</td>
+            <td>Take out panel</td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>Put away panel</td>
+        </tr>
+        <tr>
+            <td>M</td>
+            <td>Increase murder level</td>
+        </tr>
+        <tr>
+            <td>P</td>
+            <td>Toggle room speed between fast and slightly slower than normal</td>
+        </tr>
+        <tr>
+            <td>F</td>
+            <td>Set room speed to fast</td>
+        </tr>
+        <tr>
+            <td>U</td>
+            <td>Enable Undyne calls</td>
+        </tr>
+        <tr>
+            <td>F3</td>
+            <td>Creates file system_information_962</td>
+        </tr>
+        <tr>
+            <td>F7</td>
+            <td>Add 500 gold</td>
+        </tr>
+        <tr>
+            <td>F9</td>
+            <td>Stop sound</td>
+        </tr>
+        <tr>
+            <td>F10</td>
+            <td>Phase through walls</td>
+        </tr>
+        <tr>
+            <td>F11</td>
+            <td>Go to room_water1 (82)</td>
+        </tr>
+        <tr>
+            <td>F12</td>
+            <td>Restart room</td>
+        </tr>
+        <tr>
+            <td>V</td>
+            <td>Collision boxes visible</td>
+        </tr>
+        <tr>
+            <td>Backspace</td>
+            <td>Fast walking speed</td>
+        </tr>
+        <tr>
+            <td>End</td>
+            <td>Based on plot, play current "monster tale" event</td>
+        </tr>
+        <tr>
+            <td>Home</td>
+            <td>Battle current group (default is 140, change at 0x009F553C)</td>
+        </tr>
+        <tr>
+            <td>Delete (in battle)</td>
+            <td>Set hp to 999</td>
+        </tr>
+        <tr>
+            <td>1 (in battle)</td>
+            <td>Slow down</td>
+        </tr>
+        <tr>
+            <td>2 (in battle)</td>
+            <td>Speed down</td>
+        </tr>
+        <tr>
+            <td>8 (in battle)</td>
+            <td>Decrease turn timer</td>
+        </tr>
+        <tr>
+            <td>9 (in battle)</td>
+            <td>Increase turn timer</td>
+        </tr>
+        <tr>
+            <td>F6 (in battle)</td>
+            <td>Set mercy to 0 and attack to 999</td>
+        </tr>
+        <tr>
+            <td>O + P (in battle)</td>
+            <td>Set mercy to 9999</td>
+        </tr>
+        <tr>
+            <td>During specific fights</td>
+            <td>Many testing features</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
