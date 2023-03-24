@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Cumcord - An exercise in futility</title>
+  <link rel="stylesheet" href="futility_files/an-exercise-in-futility-index.d9ee8686.css"></head>
+
+  <body class="text-white">
+    <div class="bg-blurple h-120 flex flex-col">
+    <div class="flex items-center px-8 py-6 justify-between">
+      <div class="flex">
+        <img class="w-36" src="futility_files/logo.svg" alt="Cumcord">
+        <!-- i am lazy and this being disgusting doesn't matter given we're dead anyways -->
+        <div class="font-bold text-xl pt-1.5 ml-1">BLOG</div>
+      </div>
+      <div class="font-rubik text-2xl">
+        <a href="https://cumcord.com/">cumcord.com</a>
+      </div>
+    </div>
+    <div class="place-self-center">
+      <div class="relative mt-25 flex flex-col w-190 pb-5">
+        <img class="rounded-lg mb-5" src="futility_files/retard.png">
+        <p class="font-rubik text-blurple text-lg">LAUGHING @ RETARDS</p>
+        <div class="text-dnBlack">
+          <p class="text-5xl font-rubik mb-2">AN EXERCISE IN FUTILITY</p>
+          <div class="text-xl flex flex-col">
+            Cumcord has been discontinued after more than a year of continuous
+            development.
+            <p class="break-words py-3">
+              I made Cumcord when client modding was stuck between
+              BetterDiscord, and Powercord. More than a year later, we even
+              survived through the death of Powercord.
+            </p>
+            A year ago when I created Cumcord I just wanted to make something lighter,
+            simpler, and easier to develop for than other client mods, so I created
+            a new standard for plugin development.
+            <img class="w-120 place-self-center" src="futility_files/standards.png">
+            <p class="py-3">
+              I've gotten tons of reports that I succeeded in my goal of making
+              plugin development easier, so it may come as a surprise that
+              Cumcord's development has ceased.
+            </p>
+            <p>
+              Discord recently pushed an update that swaps out <a class="text-blurple underline" href="https://babel.dev/">Babel</a> for <a class="text-blurple underline" href="https://swc.rs/">SWC</a> in their frontend build pipeline, which enabled mangling on certain
+              webpack modules, and stripped displayNames from React components.
+            </p>
+            <p class="break-words py-3">
+              <b class="font-bold">Every client mod</b> used hardcoded property names
+              to find modules, and <b class="font-bold">every client mod</b> used
+              the displayName property for fetching React components.
+            </p>
+
+            <p>...including Cumcord.</p>
+
+            <p class="py-3">
+              Upon noticing this happened, BetterDiscord and Replugged were
+              fixed, albeit with every plugin broken. They both announced they'd
+              begun working on rewrites. GooseMod was discontinued.
+            </p>
+            <p>
+              Every person who was willing to maintain Cumcord in our community
+              discussed the changes hours before they were pushed to stable.
+            </p>
+            <p class="py-3">
+              We came to the conclusion that while we could do the same thing
+              that BetterDiscord and Replugged did and rewrite the mod, it
+              wasn't worth it.
+            </p>
+            <p>
+              Cumcord was built on simple DX. The change Discord introduced made
+              one of the core, simple to understand principals of client modding
+              significantly more complex, despite how small the change was. If
+              we rewrote Cumcord, our code would become disorganized, modules
+              would be found through inconsistent methods, and React components
+              would be even harder to debug.
+            </p>
+            <p class="py-3">
+              Then I realized something that should've been obvious. Client
+              modding is not sustainable.
+            </p>
+            <p>
+              Discord client modding for the longest time has been incredibly
+              tightly coupled to Discord's code and assumptions that Discord
+              does not care about improving their build pipeline.
+            </p>
+            <p class="py-3">
+              We complain about client mods breaking a lot, but we've engineered
+              them for convenience over sustainability.
+            </p>
+            <p>
+              Discord at any point could ditch Webpack and move to Vite. Discord
+              at any point could deprecate React components we heavily use.
+              Discord at any point could remove any of the 3 state management
+              libraries included in the client.
+            </p>
+            <p class="py-3">
+              Rewriting Cumcord and building it on the same principals we did
+              before would be just as unsustainable as it was before, and it'd
+              be even harder to develop for. It would be a shell of it's former
+              self.
+            </p>
+            <p>
+              If we wanted to keep writing Discord mods we'd have to build
+              something that isn't Cumcord.
+            </p>
+            <p class="py-3">...so we are.</p>
+            <img class="rounded-lg place-self-center" src="futility_files/shelter.png">
+            <p class="py-3">
+              shelter is our new experimental Discord mod that tries to think
+              outside of the box. We're trying things that the majority of the
+              client modding community have ignored in favor of convenience.
+              shelter is built to be sustainable.
+            </p>
+            <p>
+              Discord has engineered their client on Facebook's Flux state
+              management paradigm. This means that the app's global state is
+              decoupled from their React components, and also accessible in one
+              convenient place. Other mods do use Flux, but shelter is built on
+              it. It's the core of Discord's desktop client, and it's the least
+              likely to change.
+            </p>
+            <p class="py-3">
+              Other client mods rely heavily on Discord's React components.
+              shelter aims to avoid reliance on too much Discord code, so we're
+              creating our own components that recreate Discord's.
+            </p>
+            <p>Discord is built on React. shelter will be built on Solid.js.</p>
+            <p class="py-3">
+              All of these small details add up, and will hopefully make shelter
+              more sustainable than the majority of other client mods.
+            </p>
+            <p>
+              You can follow shelter's development in <a class="underline text-blurple" href="https://discord.gg/FhHQQrVs7U">the uwu.network Discord server</a>, which will also be the home for other projects from Cumcord's
+              development team, <a class="underline text-blurple" href="https://uwu.network/">uwu.network</a>.
+            </p>
+            <p class="pt-3">
+              Cumcord was an important part of the Discord modding community (we
+              were the 4th most popular mod for the longest time, very cool!)
+              and it helped me meet a lot of people I care about. Those people
+              are still around, and I'd like to thank them for being here. I'd
+              also like to thank anyone who supported Cumcord, you mean quite a
+              bit to me.
+            </p>
+            <p class="pt-6">
+              All of this is to say that Cumcord is dead, and that's okay. It
+              wasn't built to last.
+            </p>
+            <span class="text-sm">~creatable</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body></html>

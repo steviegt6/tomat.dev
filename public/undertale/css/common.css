@@ -1,0 +1,83 @@
+﻿table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: solid thin black;
+    padding: 5px;
+}
+
+.preserve-lines > * {
+    white-space: pre-line;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+nav li {
+    display: inline;
+}
+nav li + li:before {
+    content: " | ";
+}
+nav img {
+    vertical-align: middle;
+}
+.code {
+    font-family: monospace;
+}
+.tree,
+.tree ul {
+  margin:0 0 0 1em; /* indentation */
+  padding:0;
+  list-style:none;
+  position:relative;
+    margin-left: .5em;
+}
+
+.tree:before,
+.tree ul:before {
+  content:"";
+  display:block;
+  width:0;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  border-left:thin solid;
+}
+
+.tree li {
+  margin:0;
+  padding:0 1em; /* indentation + .5em */
+  position:relative;
+}
+
+.tree li:before {
+  content:"";
+  display:block;
+  width:10px; /* same with indentation */
+  height:0;
+  border-top:thin solid;
+  margin-top:-1px; /* border top width */
+  position:absolute;
+  top:.6em; /* (line-height/2) */
+  left:0;
+}
+
+.tree li:last-child:before {
+  background:white; /* same with body background */
+  height:auto;
+  top:.6em; /* (line-height/2) */
+  bottom:0;
+}
+.dataType {
+    font-weight: bolder;
+}
+.dataField {
+    font-style: italic;
+}
+.comment {
+    color: green;
+}

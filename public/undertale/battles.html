@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Battles</title>
+    <link href="/undertale/css/common.css" rel="stylesheet"/>
+    
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="/undertale">Index</a></li>
+        <li><a href="/undertale/rooms">Rooms</a></li>
+        <li><a href="/undertale/flags">Flags</a> </li>
+        <li><a href="/undertale/battles">Battles</a> </li>
+        <li><a href="/undertale/save">Save structure</a> </li>
+        <li><a href="/undertale/monsters">Monsters</a> </li>
+        <li><a href="/undertale/items">Items</a> </li>
+        <li><a href="/undertale/calls">Papyrus &amp; Undyne calls</a> </li>
+        <li><a href="/undertale/fun">Fun events</a> </li>
+        <li><a href="/undertale/debugmode">Debug mode</a> </li>
+        <li><a href="/undertale/unpacking">Unpacking (original)</a> </li>
+        <li><a href="/undertale/unpacking-corrected">Unpacking (w/ corrections)</a> </li>
+        <li><a href="/undertale/decompilation">Decompilation (original)</a> </li>
+        <li><a href="/undertale/decompilation-corrected">Decompilation (w/ corrections)</a> </li>
+        <li><del title="I don't want to get in trouble for providing this, decompile the game yourself!">Sound effects</del></li>
+        <li><a href="/undertale/sprites.zip" title="Legal: https://www.reddit.com/r/Underminers/comments/3xhtne/important_just_got_this_email_from_toby_about/">Sprites</a></li>
+        <li><del title="I don't want to get in trouble for providing this, decompile the game yourself!">Strings</del></li>
+        <li><a href="/undertale/endings.pdf">Endings map</a></li>
+        <li><a href="https://youtube.com/c/mirrawrs"><img src="/undertale/img/YouTube-social-icon_dark_24px.png"/></a></li>
+    </ul>
+</nav>
+
+
+<table>
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <th>Monster(s)</th>
+            <th>Message</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>TestFroggit, TestFroggit, TestFroggit</td>
+            <td>TestMonster and its cohorts draw near!</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Dummy</td>
+            <td>You encountered the Dummy.</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Froggit</td>
+            <td>Froggit attacks you!</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Froggit</td>
+            <td>Froggit hopped close!</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Whimsun</td>
+            <td>Whimsun approached meekly!</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Froggit, Whimsun</td>
+            <td>Froggit and Whimsun drew near!</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Moldsmal</td>
+            <td>Moldsmal blocked the way!</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Moldsmal, Moldsmal, Moldsmal</td>
+            <td>You tripped into a line of Moldsmals.</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Froggit, Froggit</td>
+            <td>A pair of Froggits hop towards you.</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Moldsmal, Moldsmal</td>
+            <td>Moldsmal and Moldsmal block the way.</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Moldsmal, Migosp</td>
+            <td>Migosp crawled up close!</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Migosp, Vegetoid</td>
+            <td>Vegetoid came out of the earth!</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Loox</td>
+            <td>Loox drew near!</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>Vegetoid, Loox</td>
+            <td>Vegetoid and Loox attacked!</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Loox, Vegetoid, Migosp</td>
+            <td>Loox and co. decided to pick on you!</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>Vegetoid, Vegetoid</td>
+            <td>A pair of Vegetoids came out of the ground!</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>Loox, Loox</td>
+            <td>A pair of Loox decided to pick on you!</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>Vegetoid</td>
+            <td>Vegetoid came out of the earth!</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td></td>
+            <td>But nobody came.</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>Napstablook</td>
+            <td>Here comes Napstablook.</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>Loox</td>
+            <td>Loox drew near!</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>Toriel</td>
+            <td>Toriel blocks the way!</td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>Doggo</td>
+            <td>Doggo blocks the way!</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>Lesser Dog</td>
+            <td>Lesser Dog appears.</td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>Dogamy, Dogaressa</td>
+            <td>Dogi assault you!</td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td>Greater Dog</td>
+            <td>It's the Greater Dog.</td>
+        </tr>
+        <tr>
+            <td>27</td>
+            <td>Papyrus</td>
+            <td>Papyrus blocks the way!</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>Gyftrot</td>
+            <td>Gyftrot confronts you!</td>
+        </tr>
+        <tr>
+            <td>30</td>
+            <td>Snowdrake</td>
+            <td>Snowdrake flutters forth!</td>
+        </tr>
+        <tr>
+            <td>30 (alt)</td>
+            <td>Chilldrake</td>
+            <td>Chilldrake saunters up!</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td>Chilldrake, Chilldrake</td>
+            <td>Chilldrakes flutter forth!</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>Icecap</td>
+            <td>Icecap struts into view.</td>
+        </tr>
+        <tr>
+            <td>33</td>
+            <td>Icecap, Snowdrake</td>
+            <td>Icecap and Snowdrake pose like bad guys.</td>
+        </tr>
+        <tr>
+            <td>33 (alt)</td>
+            <td>Icecap, Chilldrake</td>
+            <td>Icecap and Chilldrake pose like bad guys.</td>
+        </tr>
+        <tr>
+            <td>34</td>
+            <td>Jerry</td>
+            <td>Jerry clings to you!</td>
+        </tr>
+        <tr>
+            <td>35</td>
+            <td>Icecap, Jerry</td>
+            <td>Icecap appears. Jerry came too.</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>Icecap, Jerry, Snowdrake</td>
+            <td>Icecap and Snowdrake confront you, sighing. Jerry.</td>
+        </tr>
+        <tr>
+            <td>40</td>
+            <td>Aaron</td>
+            <td>Aaron flexes in!</td>
+        </tr>
+        <tr>
+            <td>41</td>
+            <td>Temmie</td>
+            <td>Special enemy Temmie appears here to defeat you!!</td>
+        </tr>
+        <tr>
+            <td>42</td>
+            <td>Moldsmal, Moldsmal</td>
+            <td>You walk into Moldsmal.</td>
+        </tr>
+        <tr>
+            <td>43</td>
+            <td>Woshua</td>
+            <td>Woshua shuffles up.</td>
+        </tr>
+        <tr>
+            <td>44</td>
+            <td>Shyren</td>
+            <td>Shyren hides in the corner but somehow encounters you anyway.</td>
+        </tr>
+        <tr>
+            <td>45</td>
+            <td>Mad Dummy</td>
+            <td>Mad Dummy blocks the way!</td>
+        </tr>
+        <tr>
+            <td>46</td>
+            <td>Aaron, Woshua</td>
+            <td>You shouldn't read this.</td>
+        </tr>
+        <tr>
+            <td>47</td>
+            <td>Undyne</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>48</td>
+            <td>Mettaton</td>
+            <td>Mettaton attacks!</td>
+        </tr>
+        <tr>
+            <td>49</td>
+            <td>RG 01, RG 02</td>
+            <td>Royal Guard attacks!</td>
+        </tr>
+        <tr>
+            <td>50</td>
+            <td>Tsunderplane</td>
+            <td>Tsunderplane gets in the way!&amp;Not on purpose or anything.</td>
+        </tr>
+        <tr>
+            <td>51</td>
+            <td>Vulkin</td>
+            <td>Vulkin strolls in.</td>
+        </tr>
+        <tr>
+            <td>52</td>
+            <td>Pyrope</td>
+            <td>Pyrope bounds towards you!</td>
+        </tr>
+        <tr>
+            <td>53</td>
+            <td>Moldsmal, Moldsmal</td>
+            <td>You walk into Moldsmal.</td>
+        </tr>
+        <tr>
+            <td>54</td>
+            <td>Woshua, Aaron</td>
+            <td>Woshua and Aaron appear.</td>
+        </tr>
+        <tr>
+            <td>55</td>
+            <td>Moldbygg, Woshua</td>
+            <td>Moldbygg and Woshua appear.</td>
+        </tr>
+        <tr>
+            <td>56</td>
+            <td>Muffet</td>
+            <td>Muffet traps you!</td>
+        </tr>
+        <tr>
+            <td>57</td>
+            <td>Mettaton</td>
+            <td>Mettaton attacks!</td>
+        </tr>
+        <tr>
+            <td>58</td>
+            <td>Undyne</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>59</td>
+            <td>Madjick</td>
+            <td>Madjick pops out of its hat!</td>
+        </tr>
+        <tr>
+            <td>60</td>
+            <td>Knight Knight</td>
+            <td>Knight Knight blocks the way!</td>
+        </tr>
+        <tr>
+            <td>61</td>
+            <td>Final Froggit</td>
+            <td>Final Froggit was already there, waiting for you</td>
+        </tr>
+        <tr>
+            <td>62</td>
+            <td>Astigmatism</td>
+            <td>Astigmatism drew near.</td>
+        </tr>
+        <tr>
+            <td>63</td>
+            <td>Whimsalot</td>
+            <td>Whimsalot rushed in!</td>
+        </tr>
+        <tr>
+            <td>64</td>
+            <td>Whimsalot, Final Froggit</td>
+            <td>Whimsalot and Final Froggit appeared.</td>
+        </tr>
+        <tr>
+            <td>65</td>
+            <td>Whimsalot, Astigmatism</td>
+            <td>Whimsalot and Astigmatism appeared.</td>
+        </tr>
+        <tr>
+            <td>66</td>
+            <td>Final Froggit, Astigmatism</td>
+            <td>Final Froggit and Astigmatism appeared.</td>
+        </tr>
+        <tr>
+            <td>67</td>
+            <td>Final Froggit, Astigmatism, Whimsalot</td>
+            <td>What a nightmare!</td>
+        </tr>
+        <tr>
+            <td>68</td>
+            <td>Knight Knight, Madjick</td>
+            <td>Mercenaries emerge from the shadows.</td>
+        </tr>
+        <tr>
+            <td>69</td>
+            <td>Bomb</td>
+            <td>Defuse the bomb!</td>
+        </tr>
+        <tr>
+            <td>70</td>
+            <td>Bomb</td>
+            <td>Defuse the dog!</td>
+        </tr>
+        <tr>
+            <td>71</td>
+            <td>Bomb</td>
+            <td>Defuse the extremely agile glass of water!</td>
+        </tr>
+        <tr>
+            <td>72</td>
+            <td>Bomb</td>
+            <td>Defuse the script!</td>
+        </tr>
+        <tr>
+            <td>73</td>
+            <td>Bomb</td>
+            <td>Defuse the basketball!</td>
+        </tr>
+        <tr>
+            <td>74</td>
+            <td>Bomb</td>
+            <td>Defuse the present!</td>
+        </tr>
+        <tr>
+            <td>75</td>
+            <td>Bomb</td>
+            <td>Defuse the game!</td>
+        </tr>
+        <tr>
+            <td>76</td>
+            <td>RG04, RG03</td>
+            <td>Royal Guard attacks!</td>
+        </tr>
+        <tr>
+            <td>77</td>
+            <td>Tsunderplane, Vulkin</td>
+            <td>Tsunderplane attacks! Not because it's jealous Vulkin is paying attention to you!</td>
+        </tr>
+        <tr>
+            <td>78</td>
+            <td>Pyrope, Pyrope</td>
+            <td>The rare and threatening Double Davis.</td>
+        </tr>
+        <tr>
+            <td>79</td>
+            <td>Vulkin, Vulkin</td>
+            <td>A strange parade blocks the path.</td>
+        </tr>
+        <tr>
+            <td>80</td>
+            <td>Mettaton</td>
+            <td>Mettaton attacks!</td>
+        </tr>
+        <tr>
+            <td>81</td>
+            <td>Mettaton EX</td>
+            <td>Mettaton EX makes his premiere!</td>
+        </tr>
+        <tr>
+            <td>82</td>
+            <td>Lemon Bread</td>
+            <td>Smells like sweet lemons.</td>
+        </tr>
+        <tr>
+            <td>83</td>
+            <td>Reaper Bird</td>
+            <td>,</td>
+        </tr>
+        <tr>
+            <td>84</td>
+            <td>Amalgamate (Snowdrake's mom)</td>
+            <td>It's so cold.</td>
+        </tr>
+        <tr>
+            <td>85</td>
+            <td>Memoryhead, Memoryhead, Memoryhead</td>
+            <td> drew near!</td>
+        </tr>
+        <tr>
+            <td>86</td>
+            <td>Endogeny</td>
+            <td>It's the Amalgamate.</td>
+        </tr>
+        <tr>
+            <td>87</td>
+            <td>Lost Soul (Undyne)</td>
+            <td>The Lost Soul appeared.</td>
+        </tr>
+        <tr>
+            <td>88</td>
+            <td>Lost Soul, Lost Soul (Papyrus, Sans)</td>
+            <td>The Lost Souls appeared.</td>
+        </tr>
+        <tr>
+            <td>89</td>
+            <td>Lost Soul (Alphys)</td>
+            <td>The Lost Soul appeared.</td>
+        </tr>
+        <tr>
+            <td>90</td>
+            <td>Lost Soul, Lost Soul (Toriel, Asgore)</td>
+            <td>The Lost Souls appeared.</td>
+        </tr>
+        <tr>
+            <td>91</td>
+            <td>Monster Kid</td>
+            <td>In my way.</td>
+        </tr>
+        <tr>
+            <td>92</td>
+            <td>Undyne the Undying</td>
+            <td>The heroine appears.</td>
+        </tr>
+        <tr>
+            <td>93</td>
+            <td>Glad Dummy</td>
+            <td>Glad Dummy lets you go.</td>
+        </tr>
+        <tr>
+            <td>94</td>
+            <td>Mettaton NEO</td>
+            <td>Mettaton NEO blocks the way!</td>
+        </tr>
+        <tr>
+            <td>95</td>
+            <td>Sans</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>100</td>
+            <td>Asgore</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>Asgore</td>
+            <td>ASGORE attacks!</td>
+        </tr>
+        <tr>
+            <td>120</td>
+            <td>Final Froggit, Astigmatism</td>
+            <td>That doesn't seem correct.</td>
+        </tr>
+        <tr>
+            <td>121</td>
+            <td>Final Froggit, Migospel</td>
+            <td>Final Froggit stopped chasing Migospel around.</td>
+        </tr>
+        <tr>
+            <td>122</td>
+            <td>Parsnik</td>
+            <td>Parsnik slithered out of the earth!</td>
+        </tr>
+        <tr>
+            <td>123</td>
+            <td>Moldessa, Moldessa</td>
+            <td>You tripped over some Moldessas.</td>
+        </tr>
+        <tr>
+            <td>124</td>
+            <td>Moldessa, Moldessa, Moldessa</td>
+            <td>A line of Moldessas block the path.</td>
+        </tr>
+        <tr>
+            <td>125</td>
+            <td>Final Froggit, Whimsalot</td>
+            <td>Can you believe it?</td>
+        </tr>
+        <tr>
+            <td>126</td>
+            <td>Final Froggit</td>
+            <td>Final Froggit hopped in...?</td>
+        </tr>
+        <tr>
+            <td>127</td>
+            <td>Whimsalot, Parsnik</td>
+            <td>Whimsalot and Parsnik appeared.</td>
+        </tr>
+        <tr>
+            <td>128</td>
+            <td>Moldessa, Migospel</td>
+            <td>Migospel flutters in, carrying Moldessa.</td>
+        </tr>
+        <tr>
+            <td>129</td>
+            <td>Parsnik, Migospel</td>
+            <td>Migospel flutters in, carrying Parsnik.</td>
+        </tr>
+        <tr>
+            <td>130</td>
+            <td>Parsnik, Parsnik</td>
+            <td>Parsniks hissed out of the earth!</td>
+        </tr>
+        <tr>
+            <td>131</td>
+            <td>Parsnik, Astigmatism</td>
+            <td>Not only potatoes have eyes.</td>
+        </tr>
+        <tr>
+            <td>132</td>
+            <td>Astigmatism, Astigmatism</td>
+            <td>Eyes appeared from the shadows.</td>
+        </tr>
+        <tr>
+            <td>133</td>
+            <td>Astigmatism, Migospel, Moldessa</td>
+            <td>Looks like a real party.</td>
+        </tr>
+        <tr>
+            <td>134</td>
+            <td>Whimsalot, Parsnik, Moldessa</td>
+            <td>Party from Hell.</td>
+        </tr>
+        <tr>
+            <td>135</td>
+            <td>Glyde</td>
+            <td>Glyde swooped in!</td>
+        </tr>
+        <tr>
+            <td>140</td>
+            <td>So Sorry</td>
+            <td>You're blocked in politely!</td>
+        </tr>
+        <tr>
+            <td>255</td>
+            <td>Asriel Dreemurr</td>
+            <td>It's the end.</td>
+        </tr>
+        <tr>
+            <td>256</td>
+            <td>Asriel</td>
+            <td>ASRIEL blocks the way!</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

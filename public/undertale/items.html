@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Items</title>
+    <link href="/undertale/css/common.css" rel="stylesheet"/>
+    
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="/undertale">Index</a></li>
+        <li><a href="/undertale/rooms">Rooms</a></li>
+        <li><a href="/undertale/flags">Flags</a> </li>
+        <li><a href="/undertale/battles">Battles</a> </li>
+        <li><a href="/undertale/save">Save structure</a> </li>
+        <li><a href="/undertale/monsters">Monsters</a> </li>
+        <li><a href="/undertale/items">Items</a> </li>
+        <li><a href="/undertale/calls">Papyrus &amp; Undyne calls</a> </li>
+        <li><a href="/undertale/fun">Fun events</a> </li>
+        <li><a href="/undertale/debugmode">Debug mode</a> </li>
+        <li><a href="/undertale/unpacking">Unpacking (original)</a> </li>
+        <li><a href="/undertale/unpacking-corrected">Unpacking (w/ corrections)</a> </li>
+        <li><a href="/undertale/decompilation">Decompilation (original)</a> </li>
+        <li><a href="/undertale/decompilation-corrected">Decompilation (w/ corrections)</a> </li>
+        <li><del title="I don't want to get in trouble for providing this, decompile the game yourself!">Sound effects</del></li>
+        <li><a href="/undertale/sprites.zip" title="Legal: https://www.reddit.com/r/Underminers/comments/3xhtne/important_just_got_this_email_from_toby_about/">Sprites</a></li>
+        <li><del title="I don't want to get in trouble for providing this, decompile the game yourself!">Strings</del></li>
+        <li><a href="/undertale/endings.pdf">Endings map</a></li>
+        <li><a href="https://youtube.com/c/mirrawrs"><img src="/undertale/img/YouTube-social-icon_dark_24px.png"/></a></li>
+    </ul>
+</nav>
+
+<table>
+<thead>
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Short name</th>
+    <th>Serious name</th>
+    <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>1</td>
+    <td>Monster Candy</td>
+    <td>MnstrCndy</td>
+    <td>MnstrCndy</td>
+    <td>Heals 10 HP Has a distinct, non-licorice flavor.</td>
+</tr>
+<tr>
+    <td>2</td>
+    <td>Croquet Roll</td>
+    <td>CroqtRoll</td>
+    <td>CroqtRoll</td>
+    <td>Heals 15 HP Fried dough traditionally served with a mallet.</td>
+</tr>
+<tr>
+    <td>3</td>
+    <td>Stick</td>
+    <td>Stick </td>
+    <td>Stick </td>
+    <td>Weapon AT 0 Its bark is worse than its bite.</td>
+</tr>
+<tr>
+    <td>4</td>
+    <td>Bandage</td>
+    <td>Bandage </td>
+    <td>Bandage </td>
+    <td>Heals 10 HP It has already been used several times.</td>
+</tr>
+<tr>
+    <td>5</td>
+    <td>Rock Candy</td>
+    <td>RockCandy</td>
+    <td>RockCandy</td>
+    <td>Heals 1 HP Here is a recipe to make this at home: 1. Find a rock</td>
+</tr>
+<tr>
+    <td>6</td>
+    <td>Pumpkin Rings</td>
+    <td>PunkRings</td>
+    <td>PmknRings</td>
+    <td>Heals 8 HP A small pumpkin cooked like onion rings.</td>
+</tr>
+<tr>
+    <td>7</td>
+    <td>Spider Donut</td>
+    <td>SpidrDont</td>
+    <td>SpdrDonut</td>
+    <td>Heals 12 HP A donut made with Spider Cider in the batter.</td>
+</tr>
+<tr>
+    <td>8</td>
+    <td>Stoic Onion</td>
+    <td>StocOnoin</td>
+    <td>Onion </td>
+    <td>Heals 5 HP Even eating it raw, the tears just won't come.</td>
+</tr>
+<tr>
+    <td>9</td>
+    <td>Ghost Fruit</td>
+    <td>GhostFrut</td>
+    <td>GhstFruit</td>
+    <td>Heals 16 HP If eaten, it will never pass to the other side.</td>
+</tr>
+<tr>
+    <td>10</td>
+    <td>Spider Cider</td>
+    <td>SpidrCidr</td>
+    <td>SpdrCider</td>
+    <td>Heals 24 HP Made with whole spiders, not just the juice.</td>
+</tr>
+<tr>
+    <td>11</td>
+    <td>Butterscotch Pie</td>
+    <td>ButtsPie </td>
+    <td>Pie </td>
+    <td>All HP Butterscotch-cinnamon pie, one slice.</td>
+</tr>
+<tr>
+    <td>12</td>
+    <td>Faded Ribbon</td>
+    <td>Ribbon </td>
+    <td>Ribbon </td>
+    <td>Armor DF 3 If you're cuter, monsters won't hit you as hard.</td>
+</tr>
+<tr>
+    <td>13</td>
+    <td>Toy Knife</td>
+    <td>Toy Knife</td>
+    <td>Toy Knife</td>
+    <td>Weapon AT 3 Made of plastic. A rarity nowadays.</td>
+</tr>
+<tr>
+    <td>14</td>
+    <td>Tough Glove</td>
+    <td>TuffGlove</td>
+    <td>Glove </td>
+    <td>Weapon AT 5 A worn pink leather glove. For five-fingered folk.</td>
+</tr>
+<tr>
+    <td>15</td>
+    <td>Manly Bandanna</td>
+    <td>Mandanna </td>
+    <td>Bandanna </td>
+    <td>Armor DF 7 It has seen some wear. It has abs drawn on it.</td>
+</tr>
+<tr>
+    <td>16</td>
+    <td>Snowman Piece</td>
+    <td>SnowPiece</td>
+    <td>SnowPiece</td>
+    <td>Heals 45 HP Please take this to the ends of the earth.</td>
+</tr>
+<tr>
+    <td>17</td>
+    <td>Nice Cream</td>
+    <td>NiceCream</td>
+    <td>NiceCream</td>
+    <td>Heals 15 HP Instead of a joke, the wrapper says something nice.</td>
+</tr>
+<tr>
+    <td>18</td>
+    <td>Puppydough Icecream</td>
+    <td>PDIceCram</td>
+    <td>Ice Cream</td>
+    <td>"Puppydough Icecream" Heals 28 HP. Made by young pups.</td>
+</tr>
+<tr>
+    <td>19</td>
+    <td>Bisicle</td>
+    <td>Bisicle </td>
+    <td>Bisicle </td>
+    <td>Heals 11 HP It's a two-pronged popsicle, so you can eat it twice.</td>
+</tr>
+<tr>
+    <td>20</td>
+    <td>Unisicle</td>
+    <td>Unisicle </td>
+    <td>Popsicle </td>
+    <td>Heals 11 HP It's a SINGLE-pronged popsicle. Wait, that's just normal...</td>
+</tr>
+<tr>
+    <td>21</td>
+    <td>Cinnamon Bun</td>
+    <td>CinnaBun </td>
+    <td>C. Bun </td>
+    <td>Heals 22 HP A cinnamon roll in the shape of a bunny.</td>
+</tr>
+<tr>
+    <td>22</td>
+    <td>Temmie Flakes</td>
+    <td>TemFlakes</td>
+    <td>TemFlakes</td>
+    <td>Heals 2 HP It's just torn up pieces of colored construction paper.</td>
+</tr>
+<tr>
+    <td>23</td>
+    <td>Abandoned Quiche</td>
+    <td>Ab Quiche</td>
+    <td>Quiche </td>
+    <td>Heals 34 HP A psychologically damaged spinach egg pie.</td>
+</tr>
+<tr>
+    <td>24</td>
+    <td>Old Tutu</td>
+    <td>Old Tutu </td>
+    <td>Tutu </td>
+    <td>Armor DF 10 Finally, a protective piece of armor.</td>
+</tr>
+<tr>
+    <td>25</td>
+    <td>Ballet Shoes</td>
+    <td>BallShoes</td>
+    <td>Shoes </td>
+    <td>Wpn AT 7 These used shoes make you feel incredibly dangerous.</td>
+</tr>
+<tr>
+    <td>26</td>
+    <td>Punch Card</td>
+    <td>PunchCard</td>
+    <td>PunchCard</td>
+    <td>Battle Item Use to make punching attacks stronger in one battle. Use outside of battle to look at the card.</td>
+</tr>
+<tr>
+    <td>27</td>
+    <td>Annoying Dog</td>
+    <td>Annoy Dog</td>
+    <td>Dog </td>
+    <td>Dog A little white dog. It's fast asleep...</td>
+</tr>
+<tr>
+    <td>28</td>
+    <td>Dog Salad</td>
+    <td>Dog Salad</td>
+    <td>Dog Salad</td>
+    <td>Heals ?? HP Recovers HP. (Hit Poodles.)</td>
+</tr>
+<tr>
+    <td>29</td>
+    <td>Dog Residue</td>
+    <td>DogResidu</td>
+    <td>D.Residue</td>
+    <td>Dog Item Shiny trail left behind by a dog.</td>
+</tr>
+<tr>
+    <td>30</td>
+    <td>Dog Residue</td>
+    <td>DogResidu</td>
+    <td>D.Residue</td>
+    <td>Dog Item Dog-shaped husk shed from a dog's carapace.</td>
+</tr>
+<tr>
+    <td>31</td>
+    <td>Dog Residue</td>
+    <td>DogResidu</td>
+    <td>D.Residue</td>
+    <td>Dog Item Dirty dishes left unwashed by a dog.</td>
+</tr>
+<tr>
+    <td>32</td>
+    <td>Dog Residue</td>
+    <td>DogResidu</td>
+    <td>D.Residue</td>
+    <td>Dog Item Glowing crystals secreted by a dog.</td>
+</tr>
+<tr>
+    <td>33</td>
+    <td>Dog Residue</td>
+    <td>DogResidu</td>
+    <td>D.Residue</td>
+    <td>Dog Item Jigsaw puzzle left unfinished by a dog.</td>
+</tr>
+<tr>
+    <td>34</td>
+    <td>Dog Residue</td>
+    <td>DogResidu</td>
+    <td>D.Residue</td>
+    <td>Dog Item Web spun by a dog to ensnare prey.</td>
+</tr>
+<tr>
+    <td>35</td>
+    <td>Astronaut Food</td>
+    <td>AstroFood</td>
+    <td>Astr.Food</td>
+    <td>Heals 21 HP For feeding a pet astronaut.</td>
+</tr>
+<tr>
+    <td>36</td>
+    <td>Instant Noodles</td>
+    <td>InstaNood</td>
+    <td>I.Noodles</td>
+    <td>Heals HP Comes with everything you need for a quick meal!</td>
+</tr>
+<tr>
+    <td>37</td>
+    <td>Crab Apple</td>
+    <td>CrabApple</td>
+    <td>CrabApple</td>
+    <td>Heals 18 HP An aquatic fruit that resembles a crustacean.</td>
+</tr>
+<tr>
+    <td>38</td>
+    <td>Hot Dog...?</td>
+    <td>Hot Dog </td>
+    <td>Hot Dog </td>
+    <td>Heals 20 HP The "meat" is made of something called a "water sausage."</td>
+</tr>
+<tr>
+    <td>39</td>
+    <td>Hot Cat</td>
+    <td>Hot Cat </td>
+    <td>Hot Cat </td>
+    <td>Heals 21 HP Like a hot dog, but with little cat ears on the end.</td>
+</tr>
+<tr>
+    <td>40</td>
+    <td>Glamburger</td>
+    <td>GlamBurg </td>
+    <td>G. Burger</td>
+    <td>Heals 27 HP A hamburger made of edible glitter and sequins.</td>
+</tr>
+<tr>
+    <td>41</td>
+    <td>Sea Tea</td>
+    <td>Sea Tea </td>
+    <td>Sea Tea </td>
+    <td>Heals 10 HP Made from glowing marshwater. Increases SPEED for one battle.</td>
+</tr>
+<tr>
+    <td>42</td>
+    <td>Starfait</td>
+    <td>Starfait </td>
+    <td>Starfait </td>
+    <td>Heals 14 HP A sweet treat made of sparkling stars.</td>
+</tr>
+<tr>
+    <td>43</td>
+    <td>Legendary Hero</td>
+    <td>Leg,Hero </td>
+    <td>L. Hero </td>
+    <td>Heals 40 HP Sandwich shaped like a sword. Increases ATTACK when eaten.</td>
+</tr>
+<tr>
+    <td>44</td>
+    <td>Butty Glasses</td>
+    <td>ClodGlass</td>
+    <td>Glasses </td>
+    <td>Armor DF 6 Glasses marred with wear. Increases INV by 9. (After you get hurt by an attack, you stay invulnerable for longer.)</td>
+</tr>
+<tr>
+    <td>45</td>
+    <td>Torn Notebook</td>
+    <td>TornNotbo</td>
+    <td>Notebook </td>
+    <td>Weapon AT 2 Contains illegible scrawls. Increases INV by 6. (After you get hurt by an attack, you stay invulnerable for longer.)</td>
+</tr>
+<tr>
+    <td>46</td>
+    <td>Stained Apron</td>
+    <td>StainApro</td>
+    <td>Apron </td>
+    <td>Armor DF 11 Heals 1 HP every other turn.</td>
+</tr>
+<tr>
+    <td>47</td>
+    <td>Burnt Pan</td>
+    <td>Burnt Pan</td>
+    <td>Burnt Pan</td>
+    <td>Weapon AT 10 Damage is rather consistent. Consumable items heal 4 more HP.</td>
+</tr>
+<tr>
+    <td>48</td>
+    <td>Cowboy Hat</td>
+    <td>CowboyHat</td>
+    <td>CowboyHat</td>
+    <td>Armor DF 12 This battle-worn hat makes you want to grow a beard. It also raises ATTACK by 5.</td>
+</tr>
+<tr>
+    <td>49</td>
+    <td>Empty Gun</td>
+    <td>Empty Gun</td>
+    <td>Empty Gun</td>
+    <td>Weapon AT 12 An antique revolver. It has no ammo. Must be used precisely, or damage will be low.</td>
+</tr>
+<tr>
+    <td>50</td>
+    <td>Heart Locket</td>
+    <td>&lt;--Locket</td>
+    <td>H. Locket</td>
+    <td>Armor DF 15 It says "Best Friends Forever."</td>
+</tr>
+<tr>
+    <td>51</td>
+    <td>Worn Dagger</td>
+    <td>WornDG </td>
+    <td>W. Dagger</td>
+    <td>Weapon AT 15 Perfect for cutting plants and vines.</td>
+</tr>
+<tr>
+    <td>52</td>
+    <td>Real Knife</td>
+    <td>RealKnife</td>
+    <td>RealKnife</td>
+    <td>Weapon AT 99 Here we are!</td>
+</tr>
+<tr>
+    <td>53</td>
+    <td>The Locket</td>
+    <td>TheLocket</td>
+    <td>TheLocket</td>
+    <td>Armor DF 99 You can feel it beating.</td>
+</tr>
+<tr>
+    <td>54</td>
+    <td>Bad Memory</td>
+    <td>BadMemory</td>
+    <td>BadMemory</td>
+    <td>Hurts 1 HP ?????</td>
+</tr>
+<tr>
+    <td>55</td>
+    <td>Dream</td>
+    <td>LastDream</td>
+    <td>LastDream</td>
+    <td>Heals 12 HP The goal of "Determination."</td>
+</tr>
+<tr>
+    <td>56</td>
+    <td>Undyne's Letter</td>
+    <td>UndynLetr</td>
+    <td>Letter </td>
+    <td>Unique Letter written for Dr. Alphys.</td>
+</tr>
+<tr>
+    <td>57</td>
+    <td>Undyne Letter EX</td>
+    <td>UndynLtrX</td>
+    <td>Letter </td>
+    <td>Unique It has DON'T DROP IT written on it.</td>
+</tr>
+<tr>
+    <td>58</td>
+    <td>Popato Chisps</td>
+    <td>PT Chisps</td>
+    <td>Chips </td>
+    <td>Heals 13 HP Regular old popato chisps.</td>
+</tr>
+<tr>
+    <td>59</td>
+    <td>Junk Food</td>
+    <td>Junk Food</td>
+    <td>Junk Food</td>
+    <td>Heals 17 HP Food that was probably once thrown away.</td>
+</tr>
+<tr>
+    <td>60</td>
+    <td>Mystery Key</td>
+    <td>MystryKey</td>
+    <td>Key </td>
+    <td>Unique It is too bent to fit on your keychain.</td>
+</tr>
+<tr>
+    <td>61</td>
+    <td>Face Steak</td>
+    <td>FaceSteak or Fsteak if the character is named drak, gigi or gugu</td>
+    <td>Steak </td>
+    <td>Heals 60 HP Huge steak in the shape of Mettaton's face. (You don't feel like it's made of real meat...)</td>
+</tr>
+<tr>
+    <td>62</td>
+    <td>Hush Puppy</td>
+    <td>HushPupe </td>
+    <td>HushPuppy</td>
+    <td>Heals 65 HP This wonderful spell will stop a dog from casting magic.</td>
+</tr>
+<tr>
+    <td>63</td>
+    <td>Snail Pie</td>
+    <td>Snail Pie</td>
+    <td>Snail Pie</td>
+    <td>Heals Some HP An acquired taste.</td>
+</tr>
+<tr>
+    <td>64</td>
+    <td>temy armor</td>
+    <td>Temmie AR</td>
+    <td>Tem.Armor</td>
+    <td>Armor DF 20 The things you can do with a college education! Raises ATTACK when worn. Recovers HP every other turn. INV up slightly.</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
