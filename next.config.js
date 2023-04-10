@@ -41,6 +41,10 @@ const nextConfig = {
             destination: "/lol/tt2/index.html"
         },
         {
+            source: "/lol/tt2/revised",
+            destination: "/lol/tt2/revised.html"
+        },
+        {
             source: "/undertale",
             destination: "/undertale/index.html"
         },
