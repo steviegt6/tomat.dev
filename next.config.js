@@ -37,6 +37,10 @@ const nextConfig = {
             destination: "/cumcord/an-exercise-in-futility.html"
         },
         {
+            source: "/lol/tt2",
+            destination: "/lol/tt2/index.html"
+        },
+        {
             source: "/undertale",
             destination: "/undertale/index.html"
         },
