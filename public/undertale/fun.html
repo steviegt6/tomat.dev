@@ -46,8 +46,10 @@
             <tr>
                 <td>
                     <ul>
-                        <li>Fun: 65</li>
                         <li>Flag[5]: 65</li>
+                        <li>Fun: 65</li>
+                        <li>Flag[7]: 0 (the final fight must not have been completed)</li>
+                        <li>plot: greater than 100 (defeated Papyrus)</li>
                         <li>Chance: .5</li>
                     </ul>
                 </td>
@@ -58,8 +60,8 @@
             <tr>
                 <td>
                     <ul>
-                        <li>Fun: 56</li>
-                        <li>Flag[5]: 56</li>
+                        <li>Flag[5]: 56-57</li>
+                        <li>Fun: 56-57</li>
                     </ul>
                 </td>
                 <td>
@@ -69,8 +71,8 @@
             <tr>
                 <td>
                     <ul>
-                        <li>Fun: 66</li>
                         <li>Flag[5]: 66</li>
+                        <li>Fun: 66</li>
                     </ul>
                 </td>
                 <td>
@@ -82,12 +84,14 @@
             <tr>
                 <td>
                     <ul>
-                        <li>Flag[5]: less than 80 or greater than 89</li>
-                        <li>murderlv: less than 8</li>
+                        <li>Flag[5]: greater than or equal to 80 and less than or equal to 89</li>
+                        <li>murderlv: less than 8 (did not progress a Genocide route past Papyrus)</li>
                     </ul>
                 </td>
                 <td>
-                    The NPC "clamgirl" will appear in room_water_friendlyhub (116).
+                    The NPC "clamgirl" will appear in room_water_friendlyhub (116). On v1.09 (Nintendo Switch) and later,
+                    if flag[7] is 1 (completed the True Pacifist final fight), and flag[279] is 1 (talked to Clam Girl
+                    before said boss), and flag[5] is exactly 81, triggers additional "gcon" dialogue and sets flag[5] to 0.
                 </td>
             </tr>
             <tr>
@@ -111,7 +115,7 @@
                         <li>Fun: 62</li>
                         <li>Flag[7]: 0 (the final fight must not have been completed)</li>
                         <li>Chance: .5</li>
-                        <li>murderlv: less than 12</li>
+                        <li>murderlv: less than 12 (did not progress a Genocide Route past Undyne)</li>
                     </ul>
                 </td>
                 <td>
@@ -126,7 +130,7 @@
                         <li>Fun: 63</li>
                         <li>Flag[7]: 0 (the final fight must not have been completed)</li>
                         <li>Chance: .5</li>
-                        <li>murderlv: less than 12</li>
+                        <li>murderlv: less than 12 (did not progress a Genocide Route past Undyne)</li>
                     </ul>
                 </td>
                 <td>
@@ -137,14 +141,15 @@
             <tr>
                 <td>
                     <ul>
-                        <li>Flag[5]: greater than 90</li>
-                        <li>Fun: greater than 90</li>
-                        <li>Flag[7]: 1 (the final fight must have been completed)</li>
+                        <li>Flag[5]: greater than or equal to 90</li>
+                        <li>Fun: greater than or equal to 90</li>
+                        <li>Flag[7]: 0 (the final fight must not have been completed)</li>
+                        <li>plot: greater than or equal to 110 (survived Undyne's first attack)</li>
                     </ul>
                 </td>
                 <td>
-                    The NPC "mkid_goner" will appear in room_water7 (91). Access it from room_water8 (92). Flag[5] will
-                    be set to 0 but the change won't be committed until you save.
+                    The NPC "mkid_goner" will appear in room_water7 (91). Access it from room_water8 (92). If talked to
+                    while holding an umbrella, flag[5] will be set to 0 but the change won't be committed until you save.
                 </td>
             </tr>
             <tr>
@@ -167,7 +172,7 @@
                         <li>Flag[5]: in range 2..39</li>
                         <li>Flag[7]: 0 (the final fight must not have been completed)</li>
                         <li>Flag[277]: 0 (the call must not have occurred before)</li>
-                        <li>plot: less than 120</li>
+                        <li>plot: less than 120 (must not have reached Undyne's boss battle)</li>
                     </ul>
                 </td>
                 <td>
