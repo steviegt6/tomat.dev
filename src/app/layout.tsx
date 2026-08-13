@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 
 import "@/styles/globals.css";
 import "@/styles/dual-render.css";
@@ -29,9 +28,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <Script id="dual-render-bootstrap" strategy="beforeInteractive">
-          {`document.documentElement.dataset.js = "true";`}
-        </Script>
+        <script dangerouslySetInnerHTML={{
+          __html: `document.documentElement.dataset.js = "true";`
+        }} />
       </head>
 
       <body>{children}</body>
