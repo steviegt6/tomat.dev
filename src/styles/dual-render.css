@@ -1,0 +1,12 @@
+.dual-render-static,
+.dual-render-interactive {
+    display: contents;
+}
+
+html[data-js="true"] .dual-render-static {
+    display: none;
+}
+
+html:not([data-js="true"]) .dual-render-interactive {
+    display: none;
+}

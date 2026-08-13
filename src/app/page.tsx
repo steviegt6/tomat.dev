@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { DualRender } from "@/components/rendering/DualRender";
 
 export default function Home() {
   return (
@@ -37,6 +38,8 @@ export default function Home() {
             </a>{" "}
             center.
           </p>
+
+          <DualRender staticContent={<p>Hi, from static!</p>} interactiveContent={<p>Hi, from interactive!</p>} />
         </div>
         <div className={styles.ctas}>
           <a
