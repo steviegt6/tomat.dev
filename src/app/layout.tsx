@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-import "@/styles/globals.css";
-import "@/styles/dual-render.css";
+import "@/styles/thirdparty/normalize.css";
+import "@/styles/globals.scss";
+import "@/styles/dual-render.scss";
 
 /*
 const geistSans = Geist({
@@ -29,7 +30,23 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{
-          __html: `document.documentElement.dataset.js = "true";`
+          __html:
+            `
+            const stored = localStorage.getItem("theme");
+            const preference =
+              stored === "light" ||
+              stored === "dark" ||
+              stored === "system"
+                ? stored
+                : "system";
+            
+            const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const resolved = preference === "system" ? (systemDark ? "dark" : "light") : preference;
+
+            document.documentElement.dataset.theme = resolved;
+
+            document.documentElement.dataset.js = "true";
+            `
         }} />
       </head>
 

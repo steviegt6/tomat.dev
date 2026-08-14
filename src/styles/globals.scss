@@ -1,13 +1,36 @@
-:root {
+// TODO: remember this query for hovers
+// @media (hover: hover) and (pointer: fine)
+
+@mixin light-variables {
+  color-scheme: light;
+
   --background: #ffffff;
   --foreground: #171717;
 }
 
+@mixin dark-variables {
+  color-scheme: dark;
+
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+:root {
+  @include light-variables;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    @include dark-variables;
   }
+}
+
+html[data-theme="light"] {
+  @include light-variables;
+}
+
+html[data-theme="dark"] {
+  @include dark-variables;
 }
 
 html {
@@ -42,8 +65,3 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
